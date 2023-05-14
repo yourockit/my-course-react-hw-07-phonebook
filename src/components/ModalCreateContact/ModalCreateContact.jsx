@@ -1,6 +1,10 @@
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { ErrorMessage, Field, Formik } from 'formik';
 import * as yup from 'yup';
-import { useCreateContactMutation } from 'redux/contactsApi';
+import {
+  useCreateContactMutation,
+  useFetchContactsQuery,
+} from 'redux/contactsApi';
+import { Container } from './ModalCreateContact.styled';
 
 const schema = yup.object().shape({
   name: yup.string().required(),
@@ -12,27 +16,24 @@ const initialValues = {
   phone: '',
 };
 
-export const ContactForm = () => {
+export const ModalCreateContact = () => {
   const [createContact] = useCreateContactMutation();
+  const { data: contacts } = useFetchContactsQuery();
   const handleSubmit = (e, { resetForm }) => {
     const newContact = {
       name: e.name,
       phone: e.phone,
     };
+    const existingContact = contacts.find(
+      contact => contact.name === newContact.name
+    );
+    if (existingContact) {
+      alert(`${newContact.name} is alredy exist`);
+      return;
+    }
     createContact(newContact);
     resetForm();
   };
-
-  // const existingContact = contacts.find(
-  //   contact => contact.name === newContact.name
-  // );
-  // if (existingContact) {
-  //   alert(`${newContact.name} is already in contacts`);
-  //   return;
-  // }
-
-  // resetForm();
-  // };
 
   return (
     <Formik
@@ -40,7 +41,7 @@ export const ContactForm = () => {
       onSubmit={handleSubmit}
       validationSchema={schema}
     >
-      <Form>
+      <Container>
         <label>
           Name
           <br />
@@ -68,7 +69,7 @@ export const ContactForm = () => {
         </label>
         <br />
         <button type="submit">Add contact</button>
-      </Form>
+      </Container>
     </Formik>
   );
 };

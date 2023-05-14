@@ -1,16 +1,12 @@
-import { Filter } from './Filter/Filter';
+import { Container } from './App.styled';
 import { Contacts } from './Contacts/Contacts';
-import { ContactForm } from './ContactForm/ContactForm';
-import { Section } from './Section/Section';
+import { ModalCreateContact } from './ModalCreateContact/ModalCreateContact';
 
 export const App = () => {
   return (
-    <>
-      <Section title="Phonebook" />
-      <ContactForm />
-      <Section title="Contacts" />
-      <Filter />
+    <Container>
+      <ModalCreateContact />
       <Contacts />
-    </>
+    </Container>
   );
 };
