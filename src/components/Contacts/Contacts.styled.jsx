@@ -6,9 +6,17 @@ export const Container = styled.div`
   flex-direction: column;
 `;
 
+export const ControlWrap = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+`;
+
 export const Control = styled.div`
   display: flex;
-  margin-bottom: 30px;
+  max-width: 480px;
+  margin: auto;
 `;
 
 export const IconBtnAdd = styled(IconAdd)`
@@ -21,4 +29,5 @@ export const IconBtnAdd = styled(IconAdd)`
 export const ContactsWrap = styled.ul`
   margin: 0;
   padding: 0;
+  margin-top: 80px;
 `;

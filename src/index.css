@@ -33,11 +33,11 @@ li {
 .buttons-enter-active {
   height: 90px;
   opacity: 1;
-  transition: opacity 200ms linear 100ms, height 200ms;
-  -webkit-transition: opacity 200ms linear 100ms, height 200ms;
-  -moz-transition: opacity 200ms linear 100ms, height 200ms;
-  -ms-transition: opacity 200ms linear 100ms, height 200ms;
-  -o-transition: opacity 200ms linear 100ms, height 200ms;
+  transition: opacity 200ms linear 100ms, height 150ms;
+  -webkit-transition: opacity 200ms linear 100ms, height 150ms;
+  -moz-transition: opacity 200ms linear 100ms, height 150ms;
+  -ms-transition: opacity 200ms linear 100ms, height 150ms;
+  -o-transition: opacity 200ms linear 100ms, height 150ms;
 }
 .buttons-exit {
   height: 90px;
@@ -46,9 +46,9 @@ li {
 .buttons-exit-active {
   height: 0;
   opacity: 0;
-  transition: height 200ms linear 100ms, opacity 200ms;
-  -webkit-transition: height 200ms linear 100ms, opacity 200ms;
-  -moz-transition: height 200ms linear 100ms, opacity 200ms;
-  -ms-transition: height 200ms linear 100ms, opacity 200ms;
-  -o-transition: height 200ms linear 100ms, opacity 200ms;
+  transition: height 150ms linear 100ms, opacity 200ms;
+  -webkit-transition: height 150ms linear 100ms, opacity 200ms;
+  -moz-transition: height 150ms linear 100ms, opacity 200ms;
+  -ms-transition: height 150ms linear 100ms, opacity 200ms;
+  -o-transition: height 150ms linear 100ms, opacity 200ms;
 }

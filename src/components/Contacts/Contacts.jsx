@@ -9,6 +9,7 @@ import {
   ContactsWrap,
   Container,
   Control,
+  ControlWrap,
 } from './Contacts.styled';
 
 export const Contacts = () => {
@@ -17,12 +18,14 @@ export const Contacts = () => {
 
   return (
     <Container>
-      <Control>
-        <Filter />
-        <Button>
-          <IconBtnAdd />
-        </Button>
-      </Control>
+      <ControlWrap>
+        <Control>
+          <Filter />
+          <Button>
+            <IconBtnAdd />
+          </Button>
+        </Control>
+      </ControlWrap>
       <ContactsWrap>
         {isLoading && <p>LOADING...</p>}
         {contacts && <ContactsList contacts={contacts} filter={filter} />}
