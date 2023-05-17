@@ -47,7 +47,7 @@ export const ContactsList = ({ contacts, filter }) => {
               {/* <Collapse isOpened={selectedContact === id}> */}
               <CSSTransition
                 in={selectedContact === id}
-                timeout={250}
+                timeout={300}
                 classNames="buttons"
                 unmountOnExit
               >
