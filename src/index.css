@@ -1,6 +1,7 @@
 @import-normalize; /* bring in normalize.css styles */
 
 body {
+  font-size: 16px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -30,16 +31,24 @@ li {
   opacity: 0;
 }
 .buttons-enter-active {
-  height: 44px;
+  height: 90px;
   opacity: 1;
-  transition: opacity 200ms linear 100ms, height 100ms;
+  transition: opacity 200ms linear 50ms, height 50ms;
+  -webkit-transition: opacity 200ms linear 50ms, height 50ms;
+  -moz-transition: opacity 200ms linear 50ms, height 50ms;
+  -ms-transition: opacity 200ms linear 50ms, height 50ms;
+  -o-transition: opacity 200ms linear 50ms, height 50ms;
 }
 .buttons-exit {
-  height: 44px;
+  height: 90px;
   opacity: 1;
 }
 .buttons-exit-active {
   height: 0;
   opacity: 0;
-  transition: height 100ms linear 200ms, opacity 200ms;
+  transition: height 50ms linear 100ms, opacity 200ms;
+  -webkit-transition: height 50ms linear 100ms, opacity 200ms;
+  -moz-transition: height 50ms linear 100ms, opacity 200ms;
+  -ms-transition: height 50ms linear 100ms, opacity 200ms;
+  -o-transition: height 50ms linear 100ms, opacity 200ms;
 }

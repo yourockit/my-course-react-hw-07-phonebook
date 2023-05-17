@@ -4,11 +4,6 @@ import { ReactComponent as IconAdd } from '../../svg/plus.svg';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 480px;
-  border: 1px solid #c5c5c5;
-  margin-right: auto;
-  margin-left: auto;
 `;
 
 export const Control = styled.div`

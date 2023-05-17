@@ -1,17 +1,19 @@
 import styled from '@emotion/styled';
+import { theme } from 'components/thems/theme';
 
 export const Btn = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 8px;
+  width: 50px;
+  height: 50px;
+  color: ${theme.colors.fontSecondary};
   border: none;
   border-radius: 50%;
-  background-color: green;
-  margin-left: 30px;
+  background-color: ${theme.colors.base};
   &:hover {
     cursor: pointer;
-    color: white;
-    background-color: red;
+    color: ${theme.colors.secondary};
+    opacity: 0.8;
   }
 `;

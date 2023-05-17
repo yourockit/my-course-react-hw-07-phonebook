@@ -1,15 +1,16 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.label`
+  width: 100%;
   display: flex;
-  justify-content: center;
 `;
 
 export const Input = styled.input`
-  width: 355px;
+  width: 100%;
   border: 1px solid green;
-  border-radius: 20px;
+  border-radius: 25px;
   padding: 10px;
+  margin-right: 15px;
   &:active,
   :focus {
     border: 1px solid red;

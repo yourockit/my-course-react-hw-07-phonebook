@@ -8,6 +8,7 @@ import {
   Name,
   Phone,
   More,
+  SymbolWrap,
 } from './ContactsList.styled';
 import { useDeleteContactMutation } from 'redux/contactsApi';
 import { Button } from 'components/Buttons/Buttons';
@@ -38,18 +39,20 @@ export const ContactsList = ({ contacts, filter }) => {
           return (
             <Item key={id}>
               <Contact onClick={() => handleClick(id)}>
-                <Symbol>{name[0]}</Symbol>
+                <SymbolWrap>
+                  <Symbol>{name[0]}</Symbol>
+                </SymbolWrap>
                 <Name>{name}</Name>
               </Contact>
               {/* <Collapse isOpened={selectedContact === id}> */}
               <CSSTransition
                 in={selectedContact === id}
-                timeout={300}
+                timeout={250}
                 classNames="buttons"
                 unmountOnExit
               >
                 <More>
-                  <Phone>{phone}</Phone>
+                  <Phone>Tel: {phone}</Phone>
                   <Buttons>
                     <Button type="button">
                       <IconBtnEdit />
