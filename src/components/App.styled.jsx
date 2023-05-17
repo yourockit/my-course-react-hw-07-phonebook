@@ -6,7 +6,7 @@ export const AppWrap = styled.main`
 `;
 
 export const Container = styled.div`
-  padding: 15px;
+  background-color: ${theme.colors.bgSecodary};
   @media screen and (min-width: 480px) {
     width: 480px;
     margin: auto;

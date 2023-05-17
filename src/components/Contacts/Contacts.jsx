@@ -2,14 +2,16 @@ import { useSelector } from 'react-redux';
 import { useFetchContactsQuery } from 'redux/contactsApi';
 import { getFilter } from 'redux/filterSlice';
 import { ContactsList } from 'components/ContactsList/ContactsList';
-import { Button } from 'components/Buttons/Buttons';
+import { ButtonAdd } from 'components/Buttons/Buttons';
 import { Filter } from 'components/Filter/Filter';
 import {
   IconBtnAdd,
   ContactsWrap,
   Container,
-  Control,
-  ControlWrap,
+  Title,
+  SearchFixed,
+  Search,
+  SearchWrap,
 } from './Contacts.styled';
 
 export const Contacts = () => {
@@ -18,14 +20,17 @@ export const Contacts = () => {
 
   return (
     <Container>
-      <ControlWrap>
-        <Control>
-          <Filter />
-          <Button>
-            <IconBtnAdd />
-          </Button>
-        </Control>
-      </ControlWrap>
+      <SearchFixed>
+        <SearchWrap>
+          <Title>Contacts</Title>
+          <Search>
+            <Filter />
+            <ButtonAdd>
+              <IconBtnAdd />
+            </ButtonAdd>
+          </Search>
+        </SearchWrap>
+      </SearchFixed>
       <ContactsWrap>
         {isLoading && <p>LOADING...</p>}
         {contacts && <ContactsList contacts={contacts} filter={filter} />}

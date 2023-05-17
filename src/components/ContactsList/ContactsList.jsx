@@ -11,7 +11,7 @@ import {
   SymbolWrap,
 } from './ContactsList.styled';
 import { useDeleteContactMutation } from 'redux/contactsApi';
-import { Button } from 'components/Buttons/Buttons';
+import { ButtonEdit, ButtonDelete } from 'components/Buttons/Buttons';
 import { useState } from 'react';
 // import { Collapse } from 'react-collapse';
 // import { UnmountClosed } from 'react-collapse';
@@ -54,12 +54,15 @@ export const ContactsList = ({ contacts, filter }) => {
                 <More>
                   <Phone>Tel: {phone}</Phone>
                   <Buttons>
-                    <Button type="button">
+                    <ButtonEdit type="button">
                       <IconBtnEdit />
-                    </Button>
-                    <Button type="button" onClick={() => deleteContact(id)}>
+                    </ButtonEdit>
+                    <ButtonDelete
+                      type="button"
+                      onClick={() => deleteContact(id)}
+                    >
                       <IconBtnDelete />
-                    </Button>
+                    </ButtonDelete>
                   </Buttons>
                 </More>
               </CSSTransition>

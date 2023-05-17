@@ -14,14 +14,17 @@ export const Contact = styled.div`
   display: flex;
   align-items: center;
   padding: 0;
-  background-color: ${theme.colors.secondary};
+  background-image: ${theme.colors.btn};
   border-radius: 25px;
-  margin-bottom: 15px;
+  border-bottom: 1px solid;
+  border-image: ${theme.colors.border};
   margin-top: 15px;
+  -webkit-tap-highlight-color: transparent;
   &:hover {
     cursor: pointer;
-    opacity: 0.8;
-    transition: opacity 200ms;
+  }
+  &:active {
+    background-color: ${theme.colors.activeBase};
   }
 `;
 
@@ -43,14 +46,14 @@ export const Symbol = styled.span`
   color: ${theme.colors.fontSecondary};
 `;
 
-export const Name = styled.h2`
+export const Name = styled.p`
   display: flex;
   align-items: center;
   width: 100%;
   height: 100%;
+  font-size: 18px;
   color: ${theme.colors.font};
   font-weight: 400;
-  /* border-bottom: 1px solid ${theme.colors.base}; */
   margin: 0;
 `;
 
@@ -65,6 +68,7 @@ export const Phone = styled.span`
   font-size: 24px;
   color: ${theme.colors.font};
   font-weight: bold;
+  margin-top: 15px;
   margin-bottom: 15px;
 `;
 

@@ -1,9 +1,25 @@
-import { Btn } from './Buttons.styled';
+import { BtnAdd, BtnEdit, BtnDelete } from './Buttons.styled';
 
-export const Button = ({ children, onClick }) => {
+export const ButtonAdd = ({ children, onClick }) => {
   return (
-    <Btn type="submit" onClick={onClick}>
+    <BtnAdd type="submit" onClick={onClick}>
       {children}
-    </Btn>
+    </BtnAdd>
+  );
+};
+
+export const ButtonEdit = ({ children, onClick }) => {
+  return (
+    <BtnEdit type="submit" onClick={onClick}>
+      {children}
+    </BtnEdit>
+  );
+};
+
+export const ButtonDelete = ({ children, onClick }) => {
+  return (
+    <BtnDelete type="submit" onClick={onClick}>
+      {children}
+    </BtnDelete>
   );
 };
