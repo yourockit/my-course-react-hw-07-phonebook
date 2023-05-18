@@ -11,11 +11,11 @@ export const Btn = styled.button`
   border: none;
   background-color: ${theme.colors.base};
   -webkit-tap-highlight-color: transparent;
-  transition: background-color 200ms;
+  transition: background-color 200ms, box-shadow 200ms;
   &:hover,
   &:active {
     cursor: pointer;
-    color: ${theme.colors.btn};
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
     background-color: ${theme.colors.btnActiveSecondary};
   }
 `;

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { ReactComponent as IconDelete } from '../../svg/cross.svg';
+import { ReactComponent as IconDelete } from '../../svg/bin.svg';
 import { ReactComponent as IconEdit } from '../../svg/pencil.svg';
 import { theme } from 'components/thems/theme';
 
