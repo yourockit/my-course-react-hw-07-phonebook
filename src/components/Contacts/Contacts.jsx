@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { useFetchContactsQuery } from 'redux/contactsApi';
 import { getFilter } from 'redux/filterSlice';
 import { ContactsList } from 'components/ContactsList/ContactsList';
-import { ButtonAdd } from 'components/Buttons/Buttons';
+import { Button } from 'components/Buttons/Buttons';
 import { Filter } from 'components/Filter/Filter';
 import {
   IconBtnAdd,
@@ -25,9 +25,9 @@ export const Contacts = () => {
           <Title>Contacts</Title>
           <Search>
             <Filter />
-            <ButtonAdd>
+            <Button>
               <IconBtnAdd />
-            </ButtonAdd>
+            </Button>
           </Search>
         </SearchWrap>
       </SearchFixed>

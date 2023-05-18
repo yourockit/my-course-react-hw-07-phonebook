@@ -7,7 +7,7 @@ export const Container = styled.label`
 
 export const Input = styled.input`
   width: 100%;
-  border-radius: 25px;
+  font-size: 18px;
   padding: 10px;
   margin-right: 15px;
   &:active,

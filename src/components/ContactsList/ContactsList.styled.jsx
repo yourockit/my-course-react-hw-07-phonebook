@@ -10,29 +10,27 @@ export const Item = styled.li`
 `;
 
 export const Contact = styled.div`
-  height: 50px;
+  height: 80px;
   display: flex;
   align-items: center;
   padding: 0;
-  background-image: ${theme.colors.btn};
-  border-radius: 25px;
-  border-bottom: 1px solid;
-  border-image: ${theme.colors.border};
-  margin-top: 15px;
+  /* background-image: ${theme.colors.btn}; */
+  background-color: ${theme.colors.bgBtn};
+  margin-top: 5px;
   -webkit-tap-highlight-color: transparent;
+  transition: background-color 200ms;
   &:hover {
     cursor: pointer;
   }
   &:active {
-    background-color: ${theme.colors.activeBase};
+    background-color: ${theme.colors.btnActive};
   }
 `;
 
 export const SymbolWrap = styled.div`
   border: none;
-  border-radius: 50%;
-  background-color: ${theme.colors.base};
   margin-right: 15px;
+  margin-left: 15px;
 `;
 
 export const Symbol = styled.span`
@@ -43,7 +41,7 @@ export const Symbol = styled.span`
   height: 50px;
   font-size: 32px;
   font-weight: bold;
-  color: ${theme.colors.fontSecondary};
+  color: ${theme.colors.font};
 `;
 
 export const Name = styled.p`
@@ -60,8 +58,8 @@ export const Name = styled.p`
 export const More = styled.div`
   display: flex;
   flex-direction: column;
-  max-height: 90px;
-  padding-left: 65px;
+  max-height: 120px;
+  padding-left: 80px;
 `;
 
 export const Phone = styled.span`
@@ -75,6 +73,7 @@ export const Phone = styled.span`
 export const Buttons = styled.div`
   display: flex;
   justify-content: space-around;
+  padding-bottom: 15px;
 `;
 
 export const IconBtnDelete = styled(IconDelete)`

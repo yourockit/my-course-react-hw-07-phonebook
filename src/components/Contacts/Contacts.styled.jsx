@@ -5,7 +5,6 @@ import { theme } from 'components/thems/theme';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 15px;
 `;
 
 export const SearchFixed = styled.div`
@@ -20,7 +19,7 @@ export const SearchFixed = styled.div`
 export const SearchWrap = styled.div`
   max-width: 480px;
   background-color: ${theme.colors.bgSecodary};
-  box-shadow: 0 5px 0 ${theme.colors.shadow};
+  box-shadow: 0 8px 8px 0px ${theme.colors.shadow};
   margin: auto;
 `;
 
@@ -48,5 +47,5 @@ export const IconBtnAdd = styled(IconAdd)`
 export const ContactsWrap = styled.ul`
   margin: 0;
   padding: 0;
-  margin-top: 105px;
+  margin-top: 120px;
 `;

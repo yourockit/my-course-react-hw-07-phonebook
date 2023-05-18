@@ -9,6 +9,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   padding: 0;
   margin: 0;
+  overflow-y: overlay;
 }
 
 code {
@@ -31,7 +32,7 @@ li {
   opacity: 0;
 }
 .buttons-enter-active {
-  height: 90px;
+  height: 120px;
   opacity: 1;
   transition: opacity 200ms linear 100ms, height 150ms;
   -webkit-transition: opacity 200ms linear 100ms, height 150ms;
@@ -40,7 +41,7 @@ li {
   -o-transition: opacity 200ms linear 100ms, height 150ms;
 }
 .buttons-exit {
-  height: 90px;
+  height: 120px;
   opacity: 1;
 }
 .buttons-exit-active {
