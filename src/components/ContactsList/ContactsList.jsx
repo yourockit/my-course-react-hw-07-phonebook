@@ -10,20 +10,37 @@ import {
   More,
   SymbolWrap,
 } from './ContactsList.styled';
-import { useDeleteContactMutation } from 'redux/contactsApi';
+// import { useDeleteContactMutation } from 'redux/contactsApi';
 import { Button } from 'components/Buttons/Buttons';
+import { Modal } from 'components/Modal/Modal';
 import { useState } from 'react';
-// import { Collapse } from 'react-collapse';
-// import { UnmountClosed } from 'react-collapse';
 import { CSSTransition } from 'react-transition-group';
 
 export const ContactsList = ({ contacts, filter }) => {
   const [selectedContact, setSelectedContact] = useState(null);
   const [show, setShow] = useState(false);
-  const [deleteContact] = useDeleteContactMutation();
+  // const [deleteContact] = useDeleteContactMutation();
 
   const handleClick = id => {
     setSelectedContact(id === selectedContact ? null : id);
+  };
+
+  const handleToggleModal = () => {
+    setShow(!show);
+  };
+
+  const closeModal = e => {
+    if (e.currentTarget !== e.target && e.code !== 'Escape') {
+      return;
+    }
+    setShow(!show);
+  };
+
+  const closeModalOnBtn = e => {
+    console.log(e.code);
+    if (e.currentTarget === e.target) {
+      return;
+    }
     setShow(!show);
   };
 
@@ -44,7 +61,6 @@ export const ContactsList = ({ contacts, filter }) => {
                 </SymbolWrap>
                 <Name>{name}</Name>
               </Contact>
-              {/* <Collapse isOpened={selectedContact === id}> */}
               <CSSTransition
                 in={selectedContact === id}
                 timeout={300}
@@ -57,13 +73,19 @@ export const ContactsList = ({ contacts, filter }) => {
                     <Button type="button">
                       <IconBtnEdit />
                     </Button>
-                    <Button type="button" onClick={() => deleteContact(id)}>
+                    <Button type="button" onClick={handleToggleModal}>
                       <IconBtnDelete />
                     </Button>
                   </Buttons>
+                  {show && (
+                    <Modal
+                      id={id}
+                      closeModal={closeModal}
+                      closeModalOnBtn={closeModalOnBtn}
+                    />
+                  )}
                 </More>
               </CSSTransition>
-              {/* </Collapse> */}
             </Item>
           );
         })}
