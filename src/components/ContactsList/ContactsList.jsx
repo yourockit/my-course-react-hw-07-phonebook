@@ -10,7 +10,7 @@ import {
   More,
   SymbolWrap,
 } from './ContactsList.styled';
-// import { useDeleteContactMutation } from 'redux/contactsApi';
+import { useDeleteContactMutation } from 'redux/contactsApi';
 import { Button } from 'components/Buttons/Buttons';
 import { Modal } from 'components/Modal/Modal';
 import { useState } from 'react';
@@ -19,7 +19,7 @@ import { CSSTransition } from 'react-transition-group';
 export const ContactsList = ({ contacts, filter }) => {
   const [selectedContact, setSelectedContact] = useState(null);
   const [show, setShow] = useState(false);
-  // const [deleteContact] = useDeleteContactMutation();
+  const [deleteContact] = useDeleteContactMutation();
 
   const handleClick = id => {
     setSelectedContact(id === selectedContact ? null : id);
@@ -80,8 +80,11 @@ export const ContactsList = ({ contacts, filter }) => {
                   {show && (
                     <Modal
                       id={id}
+                      title="Delete "
+                      name={name}
                       closeModal={closeModal}
                       closeModalOnBtn={closeModalOnBtn}
+                      deleteContact={deleteContact}
                     />
                   )}
                 </More>

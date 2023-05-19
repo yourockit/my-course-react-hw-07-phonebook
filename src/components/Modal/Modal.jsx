@@ -7,15 +7,22 @@ import {
   ContentWrap,
 } from './Modal.styled';
 import { Button } from 'components/Buttons/Buttons';
-import { useDeleteContactMutation } from 'redux/contactsApi';
 
-export const Modal = ({ id, closeModal, closeModalOnBtn }) => {
-  const [deleteContact] = useDeleteContactMutation();
-
+export const Modal = ({
+  id,
+  closeModal,
+  closeModalOnBtn,
+  deleteContact,
+  title,
+  name,
+}) => {
   return (
     <Overlay onClick={closeModal}>
       <ModalViewer>
-        <Title>Delete?</Title>
+        <Title>
+          {title}
+          {name}
+        </Title>
         <ContentWrap>
           <Button type="button" onClick={() => deleteContact(id)}>
             <IconBtnOk />
