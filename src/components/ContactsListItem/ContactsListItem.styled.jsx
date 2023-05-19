@@ -1,6 +1,4 @@
 import styled from '@emotion/styled';
-import { ReactComponent as IconDelete } from '../../svg/bin.svg';
-import { ReactComponent as IconEdit } from '../../svg/pencil.svg';
 import { theme } from 'components/thems/theme';
 
 export const Item = styled.li`
@@ -14,7 +12,6 @@ export const Contact = styled.div`
   display: flex;
   align-items: center;
   padding: 0;
-  /* background-image: ${theme.colors.btn}; */
   background-color: ${theme.colors.bgBtn};
   margin-top: 5px;
   -webkit-tap-highlight-color: transparent;
@@ -53,39 +50,4 @@ export const Name = styled.p`
   color: ${theme.colors.font};
   font-weight: 400;
   margin: 0;
-`;
-
-export const More = styled.div`
-  display: flex;
-  flex-direction: column;
-  max-height: 120px;
-  padding-left: 80px;
-`;
-
-export const Phone = styled.span`
-  font-size: 24px;
-  color: ${theme.colors.font};
-  font-weight: bold;
-  margin-top: 15px;
-  margin-bottom: 15px;
-`;
-
-export const Buttons = styled.div`
-  display: flex;
-  justify-content: space-around;
-  padding-bottom: 15px;
-`;
-
-export const IconBtnDelete = styled(IconDelete)`
-  width: 28px;
-  height: 28px;
-  border: none;
-  fill: currentColor;
-`;
-
-export const IconBtnEdit = styled(IconEdit)`
-  width: 28px;
-  height: 28px;
-  border: none;
-  fill: currentColor;
 `;

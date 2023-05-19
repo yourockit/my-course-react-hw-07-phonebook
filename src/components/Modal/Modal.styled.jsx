@@ -1,6 +1,4 @@
 import styled from '@emotion/styled';
-import { ReactComponent as IconOk } from '../../svg/checkmark.svg';
-import { ReactComponent as IconCross } from '../../svg/cross.svg';
 import { theme } from 'components/thems/theme';
 
 export const Overlay = styled.div`
@@ -19,7 +17,6 @@ export const Overlay = styled.div`
 export const ModalViewer = styled.div`
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
   background-color: ${theme.colors.bg};
   width: 100vw;
@@ -44,18 +41,4 @@ export const ContentWrap = styled.div`
   width: 100%;
   height: 100px;
   padding-top: 30px;
-`;
-
-export const IconBtnOk = styled(IconOk)`
-  width: 28px;
-  height: 28px;
-  border: none;
-  fill: currentColor;
-`;
-
-export const IconBtnCancel = styled(IconCross)`
-  width: 28px;
-  height: 28px;
-  border: none;
-  fill: currentColor;
 `;

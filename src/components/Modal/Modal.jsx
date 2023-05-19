@@ -1,36 +1,17 @@
-import {
-  Overlay,
-  ModalViewer,
-  Title,
-  IconBtnOk,
-  IconBtnCancel,
-  ContentWrap,
-} from './Modal.styled';
-import { Button } from 'components/Buttons/Buttons';
+import { Overlay, ModalViewer, Title, ContentWrap } from './Modal.styled';
 
-export const Modal = ({
-  id,
-  closeModal,
-  closeModalOnBtn,
-  deleteContact,
-  title,
-  name,
-}) => {
+export const Modal = ({ show, children, title, name }) => {
+  if (!show) {
+    return null;
+  }
   return (
-    <Overlay onClick={closeModal}>
+    <Overlay>
       <ModalViewer>
         <Title>
           {title}
           {name}
         </Title>
-        <ContentWrap>
-          <Button type="button" onClick={() => deleteContact(id)}>
-            <IconBtnOk />
-          </Button>
-          <Button type="button" onClick={closeModalOnBtn}>
-            <IconBtnCancel />
-          </Button>
-        </ContentWrap>
+        <ContentWrap>{children}</ContentWrap>
       </ModalViewer>
     </Overlay>
   );
