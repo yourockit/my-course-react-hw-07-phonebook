@@ -11,7 +11,7 @@ export const Btn = styled.button`
   border: none;
   background-color: ${theme.colors.base};
   -webkit-tap-highlight-color: transparent;
-  transition: background-color 200ms, box-shadow 200ms;
+  transition: background-color 50ms, box-shadow 50ms;
   &:hover,
   &:active {
     cursor: pointer;
