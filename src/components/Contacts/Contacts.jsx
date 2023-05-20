@@ -16,6 +16,7 @@ import {
   Search,
   SearchWrap,
 } from './Contacts.styled';
+import { Loading } from 'components/Loading/Loading';
 
 export const Contacts = () => {
   const { data: contacts, isLoading } = useFetchContactsQuery();
@@ -36,7 +37,7 @@ export const Contacts = () => {
         </SearchWrap>
       </SearchFixed>
       <ContactsWrap>
-        {isLoading && <p>LOADING...</p>}
+        {isLoading && <Loading />}
         {contacts && <ContactsList contacts={contacts} filter={filter} />}
       </ContactsWrap>
       <Modal show={isShowModal} title="Add Contact" closeModal={toogleMOdal}>
