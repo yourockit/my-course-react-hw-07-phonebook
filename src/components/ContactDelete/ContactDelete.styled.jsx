@@ -1,7 +1,12 @@
 import styled from '@emotion/styled';
 import { ReactComponent as IconOk } from '../../svg/checkmark.svg';
 import { ReactComponent as IconCross } from '../../svg/cross.svg';
-// import { theme } from 'components/thems/theme';
+
+export const Buttons = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+`;
 
 export const IconBtnOk = styled(IconOk)`
   width: 28px;

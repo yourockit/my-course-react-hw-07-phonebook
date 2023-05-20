@@ -19,11 +19,11 @@ export const ModalViewer = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: ${theme.colors.bg};
-  width: 100vw;
-  padding-top: calc(100vw - 95%);
-  padding-bottom: calc(100vw - 95%);
+  width: calc(100vw - 10%);
+  padding-top: 45px;
+  padding-bottom: 45px;
   @media screen and (min-width: 480px) {
-    width: 480px;
+    width: 450px;
     margin: auto;
   }
 `;
@@ -37,8 +37,7 @@ export const Title = styled.p`
 
 export const ContentWrap = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   width: 100%;
-  height: 100px;
-  padding-top: 30px;
+  padding: 30px;
 `;

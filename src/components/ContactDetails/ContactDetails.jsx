@@ -13,7 +13,7 @@ import { useDeleteContactMutation } from 'redux/contactsApi';
 
 export const ContactDetails = ({ id, phone, name }) => {
   const [deleteContact] = useDeleteContactMutation();
-  const [isShowModal, toogleMOdal] = useModal();
+  const [isShowModal, togleModal] = useModal();
 
   return (
     <Details>
@@ -22,14 +22,19 @@ export const ContactDetails = ({ id, phone, name }) => {
         <Button type="button">
           <IconBtnEdit />
         </Button>
-        <Button type="button" onClick={toogleMOdal}>
+        <Button type="button" onClick={togleModal}>
           <IconBtnDelete />
         </Button>
       </Buttons>
-      <Modal show={isShowModal} title="Delete " name={name}>
+      <Modal
+        show={isShowModal}
+        title="Delete "
+        name={name}
+        closeModal={togleModal}
+      >
         <ContactDelete
           id={id}
-          onCloseButtonClick={toogleMOdal}
+          onCloseButtonClick={togleModal}
           deleteContact={deleteContact}
         />
       </Modal>

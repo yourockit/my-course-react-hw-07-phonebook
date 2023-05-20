@@ -1,11 +1,19 @@
 import { Overlay, ModalViewer, Title, ContentWrap } from './Modal.styled';
 
-export const Modal = ({ show, children, title, name }) => {
+export const Modal = ({ show, children, title, name, closeModal }) => {
   if (!show) {
     return null;
   }
+
+  const handleCloseModal = e => {
+    if (e.currentTarget !== e.target) {
+      return;
+    }
+    closeModal();
+  };
+
   return (
-    <Overlay>
+    <Overlay onClick={handleCloseModal}>
       <ModalViewer>
         <Title>
           {title}

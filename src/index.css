@@ -21,11 +21,6 @@ li {
   list-style-type: none;
 }
 
-/* FOR REACT COLLAPSE */
-.ReactCollapse--collapse {
-  transition: height 500ms;
-}
-
 /* FOR CSSTRANSITION */
 .buttons-enter {
   height: 0px;

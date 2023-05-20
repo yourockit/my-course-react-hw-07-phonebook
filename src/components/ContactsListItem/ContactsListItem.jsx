@@ -16,25 +16,6 @@ export const ContactsList = ({ contacts, filter }) => {
     setSelectedContact(id === selectedContact ? null : id);
   };
 
-  // const handleToggleModal = () => {
-  //   setShow(!show);
-  // };
-
-  // const closeModal = e => {
-  //   if (e.currentTarget !== e.target && e.code !== 'Escape') {
-  //     return;
-  //   }
-  //   setShow(!show);
-  // };
-
-  // const closeModalOnBtn = e => {
-  //   console.log(e.code);
-  //   if (e.currentTarget === e.target) {
-  //     return;
-  //   }
-  //   setShow(!show);
-  // };
-
   const contactsFilter = contacts.filter(contact =>
     contact.name.toLowerCase().includes(filter.toLowerCase())
   );

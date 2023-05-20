@@ -8,7 +8,9 @@ export const Container = styled.label`
 export const Input = styled.input`
   width: 100%;
   font-size: 18px;
-  padding: 10px;
+  height: 50px;
+  padding: 0 0 0 5px;
+  border: none;
   margin-right: 15px;
   &:active,
   :focus {

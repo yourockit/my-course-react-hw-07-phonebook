@@ -1,10 +1,19 @@
-import { ErrorMessage, Field, Formik } from 'formik';
+import { Formik } from 'formik';
 import * as yup from 'yup';
 import {
   useCreateContactMutation,
   useFetchContactsQuery,
 } from 'redux/contactsApi';
-import { Container } from './ModalCreateContact.styled';
+import {
+  Container,
+  IconBtnAdd,
+  Input,
+  Label,
+  Title,
+  Buttons,
+  IconBtnCancel,
+} from './ContactAdd.styled';
+import { Button } from 'components/Buttons/Buttons';
 
 const schema = yup.object().shape({
   name: yup.string().required(),
@@ -16,10 +25,10 @@ const initialValues = {
   phone: '',
 };
 
-export const ModalCreateContact = () => {
+export const ContactAdd = ({ onCloseButtonClick }) => {
   const [createContact] = useCreateContactMutation();
   const { data: contacts } = useFetchContactsQuery();
-  const handleSubmit = (e, { resetForm }) => {
+  const handleSubmit = e => {
     const newContact = {
       name: e.name,
       phone: e.phone,
@@ -32,7 +41,7 @@ export const ModalCreateContact = () => {
       return;
     }
     createContact(newContact);
-    resetForm();
+    onCloseButtonClick();
   };
 
   return (
@@ -42,33 +51,36 @@ export const ModalCreateContact = () => {
       validationSchema={schema}
     >
       <Container>
-        <label>
-          Name
-          <br />
-          <Field
+        <Label>
+          <Title>Name</Title>
+          <Input
             type="text"
             name="name"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
+            placeholder="Contact name"
           />
-          <ErrorMessage name="name" />
-          <br />
-        </label>
-        <label>
-          Phone number
-          <br />
-          <Field
+        </Label>
+        <Label>
+          <Title>Phone number</Title>
+          <Input
             type="tel"
             name="phone"
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
+            placeholder="Contact phone"
           />
-          <ErrorMessage name="phone" />
-        </label>
-        <br />
-        <button type="submit">Add contact</button>
+        </Label>
+        <Buttons>
+          <Button type="submit">
+            <IconBtnAdd />
+          </Button>
+          <Button type="button" onClick={onCloseButtonClick}>
+            <IconBtnCancel />
+          </Button>
+        </Buttons>
       </Container>
     </Formik>
   );
