@@ -2,15 +2,16 @@ import styled from '@emotion/styled';
 import { ReactComponent as IconDelete } from '../../svg/bin.svg';
 import { ReactComponent as IconEdit } from '../../svg/pencil.svg';
 import { theme } from 'components/thems/theme';
+import { motion } from 'framer-motion';
 
-export const Details = styled.div`
+export const Details = styled(motion.div)`
   display: flex;
   flex-direction: column;
   max-height: 120px;
   padding-left: 80px;
 `;
 
-export const Phone = styled.span`
+export const Phone = styled(motion.span)`
   font-size: 24px;
   color: ${theme.colors.font};
   font-weight: bold;
@@ -18,7 +19,7 @@ export const Phone = styled.span`
   margin-bottom: 15px;
 `;
 
-export const Buttons = styled.div`
+export const Buttons = styled(motion.div)`
   display: flex;
   justify-content: space-around;
   padding-bottom: 15px;

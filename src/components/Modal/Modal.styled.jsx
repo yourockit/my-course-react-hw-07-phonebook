@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
 import { theme } from 'components/thems/theme';
+import { motion } from 'framer-motion';
 
-export const Overlay = styled.div`
+export const Overlay = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,15 +11,15 @@ export const Overlay = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.3);
   z-index: 1200;
 `;
 
-export const ModalViewer = styled.div`
+export const ModalViewer = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: ${theme.colors.bg};
+  background-color: ${theme.colors.bgSecodary};
   width: calc(100vw - 10%);
   padding-top: 45px;
   padding-bottom: 45px;

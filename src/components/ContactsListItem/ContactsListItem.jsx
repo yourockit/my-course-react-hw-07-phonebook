@@ -7,9 +7,8 @@ import {
 } from './ContactsListItem.styled';
 import { ContactDetails } from '../ContactDetails/ContactDetails';
 import { useState } from 'react';
-import { CSSTransition } from 'react-transition-group';
 
-export const ContactsList = ({ contacts, filter }) => {
+export const ContactsListItem = ({ contacts, filter }) => {
   const [selectedContact, setSelectedContact] = useState(null);
 
   const handleClick = id => {
@@ -33,14 +32,12 @@ export const ContactsList = ({ contacts, filter }) => {
                 </SymbolWrap>
                 <Name>{name}</Name>
               </Contact>
-              <CSSTransition
-                in={selectedContact === id}
-                timeout={300}
-                classNames="buttons"
-                unmountOnExit
-              >
-                <ContactDetails id={id} name={name} phone={phone} />
-              </CSSTransition>
+              <ContactDetails
+                selectedContact={selectedContact}
+                id={id}
+                name={name}
+                phone={phone}
+              />
             </Item>
           );
         })}

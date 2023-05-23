@@ -1,7 +1,8 @@
 import { useSelector } from 'react-redux';
 import { useFetchContactsQuery } from 'redux/contactsApi';
 import { getFilter } from 'redux/filterSlice';
-import { ContactsList } from 'components/ContactsListItem/ContactsListItem';
+// import { getSelectedContact } from 'redux/selectedContactByIdSlice';
+import { ContactsListItem } from 'components/ContactsListItem/ContactsListItem';
 import { Modal } from 'components/Modal/Modal';
 import useModal from '../../services/hooks/useModal';
 import { ContactAdd } from 'components/ContactAdd/ContactAdd';
@@ -21,7 +22,17 @@ import { Loading } from 'components/Loading/Loading';
 export const Contacts = () => {
   const { data: contacts, isLoading } = useFetchContactsQuery();
   const filter = useSelector(getFilter);
-  const [isShowModal, toogleMOdal] = useModal();
+  // const selectedContactById = useSelector(getSelectedContact);
+  const [isShowModal, toggleModal] = useModal();
+
+  // if (!contacts) {
+  //   return;
+  // }
+  // const contactsId = contacts.map(contact => contact.id);
+  // const selectedId = contactsId.includes(selectedContactById);
+  // if (!selectedId && selectedContactById !== null) {
+  //   alert('DELETED');
+  // }
 
   return (
     <Container>
@@ -30,7 +41,7 @@ export const Contacts = () => {
           <Title>Contacts</Title>
           <Search>
             <Filter />
-            <Button type="button" onClick={toogleMOdal}>
+            <Button type="button" onClick={toggleModal}>
               <IconBtnAdd />
             </Button>
           </Search>
@@ -38,10 +49,14 @@ export const Contacts = () => {
       </SearchFixed>
       <ContactsWrap>
         {isLoading && <Loading />}
-        {contacts && <ContactsList contacts={contacts} filter={filter} />}
+        {contacts && <ContactsListItem contacts={contacts} filter={filter} />}
       </ContactsWrap>
-      <Modal show={isShowModal} title="Add Contact" closeModal={toogleMOdal}>
-        <ContactAdd onCloseButtonClick={toogleMOdal} />
+      <Modal
+        showModal={isShowModal}
+        title="Add Contact"
+        closeModal={toggleModal}
+      >
+        <ContactAdd toggleModal={toggleModal} />
       </Modal>
     </Container>
   );

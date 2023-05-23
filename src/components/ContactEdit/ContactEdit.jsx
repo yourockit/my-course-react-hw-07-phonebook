@@ -1,9 +1,6 @@
 import { Formik } from 'formik';
 import * as yup from 'yup';
-import {
-  useCreateContactMutation,
-  useFetchContactsQuery,
-} from 'redux/contactsApi';
+import { useUpdateContactMutation } from 'redux/contactsApi';
 import {
   Container,
   IconBtnAdd,
@@ -12,7 +9,7 @@ import {
   Title,
   Buttons,
   IconBtnCancel,
-} from './ContactAdd.styled';
+} from './ContactEdit.styled';
 import { Button } from 'components/Buttons/Buttons';
 
 const schema = yup.object().shape({
@@ -20,28 +17,21 @@ const schema = yup.object().shape({
   phone: yup.number().required(),
 });
 
-const initialValues = {
-  name: '',
-  phone: '',
-};
-
-export const ContactAdd = ({ toggleModal }) => {
-  const [createContact] = useCreateContactMutation();
-  const { data: contacts } = useFetchContactsQuery();
+export const ContactEdit = ({ id, name, phone, toggleModal }) => {
+  const [updateContact] = useUpdateContactMutation();
   const handleSubmit = e => {
-    const newContact = {
+    const contact = {
       name: e.name,
       phone: e.phone,
     };
-    const existingContact = contacts.find(
-      contact => contact.name === newContact.name
-    );
-    if (existingContact) {
-      alert(`${newContact.name} is alredy exist`);
-      return;
-    }
-    createContact(newContact);
+
+    console.log(contact);
+    updateContact({ id, contact });
     toggleModal();
+  };
+  const initialValues = {
+    name: name,
+    phone: phone,
   };
 
   return (

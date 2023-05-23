@@ -9,35 +9,69 @@ import { Button } from 'components/Buttons/Buttons';
 import { Modal } from 'components/Modal/Modal';
 import useModal from '../../services/hooks/useModal';
 import { ContactDelete } from 'components/ContactDelete/ContactDelete';
-import { useDeleteContactMutation } from 'redux/contactsApi';
+import { AnimatePresence } from 'framer-motion';
+import { show } from './ContactDetailsMotionStyle';
+import { useState } from 'react';
+import { ContactEdit } from 'components/ContactEdit/ContactEdit';
 
-export const ContactDetails = ({ id, phone, name }) => {
-  const [deleteContact] = useDeleteContactMutation();
-  const [isShowModal, togleModal] = useModal();
+export const ContactDetails = ({ selectedContact, id, phone, name }) => {
+  const [isShowModal, toggleModal] = useModal();
+  const [modalOpen, setModalOpen] = useState('');
+
+  const onHandleClick = modal => {
+    if (modal === modalOpen) {
+      setModalOpen('');
+    }
+    setModalOpen(modal);
+    toggleModal();
+  };
 
   return (
-    <Details>
-      <Phone>Tel: {phone}</Phone>
-      <Buttons>
-        <Button type="button">
-          <IconBtnEdit />
-        </Button>
-        <Button type="button" onClick={togleModal}>
-          <IconBtnDelete />
-        </Button>
-      </Buttons>
-      <Modal
-        show={isShowModal}
-        title="Delete "
-        name={name}
-        closeModal={togleModal}
-      >
-        <ContactDelete
-          id={id}
-          onCloseButtonClick={togleModal}
-          deleteContact={deleteContact}
-        />
-      </Modal>
-    </Details>
+    <AnimatePresence>
+      {selectedContact === id && (
+        <Details
+          key="details"
+          initial="hidden"
+          animate={'show'}
+          exit={'hidden'}
+          variants={show.container}
+        >
+          <Phone variants={show.item}>Tel: {phone}</Phone>
+          <Buttons variants={show.item}>
+            <Button type="button" onClick={() => onHandleClick('edit')}>
+              <IconBtnEdit />
+            </Button>
+            <Button type="button" onClick={() => onHandleClick('delete')}>
+              <IconBtnDelete />
+            </Button>
+          </Buttons>
+          {modalOpen === 'delete' && (
+            <Modal
+              showModal={isShowModal}
+              title="Delete "
+              name={name}
+              closeModal={toggleModal}
+            >
+              <ContactDelete id={id} toggleModal={toggleModal} />
+            </Modal>
+          )}
+          {modalOpen === 'edit' && (
+            <Modal
+              showModal={isShowModal}
+              title="Edit "
+              name={name}
+              closeModal={toggleModal}
+            >
+              <ContactEdit
+                id={id}
+                name={name}
+                phone={phone}
+                toggleModal={toggleModal}
+              />
+            </Modal>
+          )}
+        </Details>
+      )}
+    </AnimatePresence>
   );
 };
