@@ -2,7 +2,8 @@ import styled from '@emotion/styled';
 import { theme } from 'components/thems/theme';
 
 export const AppWrap = styled.main`
-  background-color: ${theme.colors.bg};
+  /* height: 110vh;
+  background-color: ${theme.colors.bg}; */
 `;
 
 export const Container = styled.div`

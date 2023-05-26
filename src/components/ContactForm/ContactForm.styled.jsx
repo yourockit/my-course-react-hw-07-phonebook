@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Form } from 'formik';
+import { ErrorMessage, Form } from 'formik';
 import { ReactComponent as IconAdd } from '../../svg/checkmark.svg';
 import { ReactComponent as IconCancel } from '../../svg/cross.svg';
 import { theme } from 'components/thems/theme';
@@ -40,6 +40,17 @@ export const Input = styled(Field)`
     outline-offset: 0;
   }
 `;
+
+export const ErrorWrap = styled.div`
+  width: 90%;
+  height: 20px;
+  font-size: 16px;
+  color: ${theme.colors.fontSecondary};
+  padding: 5px 15px 0 15px;
+  margin: auto;
+`;
+
+export const ErrorMsg = styled(ErrorMessage)``;
 
 export const Buttons = styled.div`
   display: flex;

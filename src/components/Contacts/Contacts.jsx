@@ -5,7 +5,7 @@ import { getFilter } from 'redux/filterSlice';
 import { ContactsListItem } from 'components/ContactsListItem/ContactsListItem';
 import { Modal } from 'components/Modal/Modal';
 import useModal from '../../services/hooks/useModal';
-import { ContactAdd } from 'components/ContactAdd/ContactAdd';
+import { ContactForm } from 'components/ContactForm/ContactForm';
 import { Button } from 'components/Buttons/Buttons';
 import { Filter } from 'components/Filter/Filter';
 import {
@@ -56,7 +56,7 @@ export const Contacts = () => {
         title="Add Contact"
         closeModal={toggleModal}
       >
-        <ContactAdd toggleModal={toggleModal} />
+        <ContactForm toggleModal={toggleModal} name={''} phone={''} />
       </Modal>
     </Container>
   );

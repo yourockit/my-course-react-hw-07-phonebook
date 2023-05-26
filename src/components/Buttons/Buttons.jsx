@@ -1,8 +1,8 @@
 import { Btn } from './Buttons.styled';
 
-export const Button = ({ children, onClick }) => {
+export const Button = ({ type, children, onClick, onSubmit }) => {
   return (
-    <Btn type="submit" onClick={onClick}>
+    <Btn type={type} onClick={onClick} onSubmit={onSubmit}>
       {children}
     </Btn>
   );

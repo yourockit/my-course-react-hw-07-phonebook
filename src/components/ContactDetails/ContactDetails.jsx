@@ -12,7 +12,7 @@ import { ContactDelete } from 'components/ContactDelete/ContactDelete';
 import { AnimatePresence } from 'framer-motion';
 import { show } from './ContactDetailsMotionStyle';
 import { useState } from 'react';
-import { ContactEdit } from 'components/ContactEdit/ContactEdit';
+import { ContactForm } from 'components/ContactForm/ContactForm';
 
 export const ContactDetails = ({ selectedContact, id, phone, name }) => {
   const [isShowModal, toggleModal] = useModal();
@@ -62,7 +62,7 @@ export const ContactDetails = ({ selectedContact, id, phone, name }) => {
               name={name}
               closeModal={toggleModal}
             >
-              <ContactEdit
+              <ContactForm
                 id={id}
                 name={name}
                 phone={phone}
