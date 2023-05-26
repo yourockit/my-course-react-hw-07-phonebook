@@ -7,9 +7,9 @@ export const Btn = styled.button`
   align-items: center;
   width: 50px;
   height: 50px;
-  color: ${theme.colors.fontSecondary};
+  color: ${theme.colors.secondary};
   border: none;
-  background-color: ${theme.colors.base};
+  background-color: ${theme.colors.btn};
   -webkit-tap-highlight-color: transparent;
   transition: background-color 50ms, box-shadow 50ms;
   &:hover,

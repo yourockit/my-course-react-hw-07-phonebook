@@ -17,7 +17,7 @@ export const Contact = styled.div`
   display: flex;
   align-items: center;
   padding: 0;
-  background-color: ${theme.colors.bgBtn};
+  background-color: ${theme.colors.bgListItem};
   margin-top: 5px;
   -webkit-tap-highlight-color: transparent;
 `;

@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { theme } from 'components/thems/theme';
 
 export const AppWrap = styled.main`
-  /* height: 110vh;
+  /* height: 110vw;
   background-color: ${theme.colors.bg}; */
 `;
 

@@ -1,6 +1,7 @@
 import { AnimatePresence } from 'framer-motion';
 import { Overlay, ModalViewer, Title, ContentWrap } from './Modal.styled';
 import { show } from './ModalMotionStyle';
+import { useEffect } from 'react';
 
 export const Modal = ({ showModal, children, title, name, closeModal }) => {
   const handleCloseModal = e => {
@@ -9,6 +10,14 @@ export const Modal = ({ showModal, children, title, name, closeModal }) => {
     }
     closeModal();
   };
+
+  useEffect(() => {
+    if (showModal) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [showModal]);
 
   return (
     <AnimatePresence>

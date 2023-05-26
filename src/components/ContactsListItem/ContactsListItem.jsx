@@ -22,7 +22,7 @@ export const ContactsListItem = ({ contacts, filter }) => {
   return (
     <>
       {contactsFilter
-        // .sort((a, b) => a.name.localeCompare(b.name))
+        .sort((a, b) => a.name.localeCompare(b.name))
         .map(({ id, name, phone }) => {
           return (
             <Item key={id}>
