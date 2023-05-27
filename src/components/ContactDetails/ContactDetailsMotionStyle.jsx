@@ -8,7 +8,7 @@ export const show = {
       },
     },
     show: {
-      height: 120,
+      height: 'auto',
       transition: {
         duration: 0.2,
         when: 'beforeChildren',
@@ -26,7 +26,7 @@ export const show = {
     show: {
       opacity: 1,
       transition: {
-        opacity: 0.1,
+        duration: 0.1,
       },
     },
   },

@@ -35,7 +35,9 @@ export const ContactForm = ({ id, name, phone, toggleModal }) => {
     };
 
     const isInContacts = contacts.some(
-      contact => contact.name === e.name && contact.phone === e.phone
+      contact =>
+        contact.name.toLowerCase() === e.name.toLowerCase() &&
+        contact.phone === e.phone
     );
 
     if (isInContacts) {
@@ -47,8 +49,9 @@ export const ContactForm = ({ id, name, phone, toggleModal }) => {
     try {
       if (name && phone) {
         await updateContact({ id, contact }).unwrap().then(toggleModal());
+      } else {
+        await createContact(contact).unwrap().then(toggleModal());
       }
-      await createContact(contact).unwrap().then(toggleModal());
     } catch (error) {
       console.log('ERROR');
     }

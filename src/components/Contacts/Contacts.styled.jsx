@@ -44,8 +44,8 @@ export const IconBtnAdd = styled(IconAdd)`
   fill: currentColor;
 `;
 
-export const ContactsWrap = styled.ul`
+export const ContactsWrap = styled.div`
   margin: 0;
   padding: 0;
-  margin-top: 120px;
+  padding-top: 120px;
 `;

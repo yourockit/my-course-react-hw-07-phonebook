@@ -7,7 +7,8 @@ import { motion } from 'framer-motion';
 export const Details = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  max-height: 120px;
+  background-color: ${theme.colors.bg};
+  max-height: auto;
   padding-left: 80px;
 `;
 

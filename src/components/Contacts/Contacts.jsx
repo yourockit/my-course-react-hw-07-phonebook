@@ -10,7 +10,6 @@ import { Button } from 'components/Buttons/Buttons';
 import { Filter } from 'components/Filter/Filter';
 import {
   IconBtnAdd,
-  ContactsWrap,
   Container,
   Title,
   SearchFixed,
@@ -47,10 +46,8 @@ export const Contacts = () => {
           </Search>
         </SearchWrap>
       </SearchFixed>
-      <ContactsWrap>
-        {isLoading && <Loading />}
-        {contacts && <ContactsListItem contacts={contacts} filter={filter} />}
-      </ContactsWrap>
+      {isLoading && <Loading />}
+      {contacts && <ContactsListItem contacts={contacts} filter={filter} />}
       <Modal
         showModal={isShowModal}
         title="Add Contact"

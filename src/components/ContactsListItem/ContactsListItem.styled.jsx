@@ -1,6 +1,15 @@
 import styled from '@emotion/styled';
 import { theme } from 'components/thems/theme';
 
+export const ContactListWrap = styled.div`
+  padding-top: 120px;
+`;
+
+export const Container = styled.ul`
+  margin: 0;
+  padding: 0;
+`;
+
 export const Item = styled.li`
   display: flex;
   justify-content: space-between;
@@ -8,9 +17,9 @@ export const Item = styled.li`
 `;
 
 export const Contact = styled.div`
-  height: 80px;
   display: flex;
   align-items: center;
+  height: 80px;
   padding: 0;
   background-color: ${theme.colors.bgSecodary};
   margin-top: 5px;
