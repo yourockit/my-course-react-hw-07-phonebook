@@ -13,14 +13,15 @@ export const ContactsContainer = styled.ul`
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0;
+  margin: 5px;
 `;
 
 export const Item = styled.li`
   display: flex;
   flex-wrap: wrap;
   height: 180px;
-  width: calc((100% - 10px) / 2);
-  margin-top: 5px;
+  width: calc((100% - 20px) / 2);
+  margin: 5px;
 `;
 
 export const Contact = styled(motion.div)`

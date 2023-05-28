@@ -7,7 +7,7 @@ export const Container = styled.label`
   align-items: center;
   width: 60%;
   border-bottom: 2px solid ${theme.colors.bgSecodary};
-  margin-left: 15px;
+  margin-left: 10px;
 `;
 
 export const Input = styled.input`

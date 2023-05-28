@@ -24,7 +24,7 @@ export const SearchWrap = styled.div`
 export const TitleWrap = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 15px;
+  padding: 10px;
 `;
 
 export const Title = styled.p`
@@ -35,7 +35,7 @@ export const Title = styled.p`
 `;
 
 export const Search = styled.div`
-  padding-bottom: 15px;
+  padding-bottom: 10px;
 `;
 
 export const IconBtnAdd = styled(IconAdd)`
