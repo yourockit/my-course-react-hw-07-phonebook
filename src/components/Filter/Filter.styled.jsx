@@ -24,6 +24,14 @@ export const Input = styled.input`
   }
 `;
 
+export const IconWrap = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+`;
+
 export const IconSearch = styled(IconFind)`
   width: 20px;
   height: 20px;

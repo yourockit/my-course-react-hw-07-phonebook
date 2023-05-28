@@ -4,9 +4,10 @@ import {
   ContactsContainer,
   Contact,
   Item,
-  Symbol,
   Name,
-  SymbolWrap,
+  Div,
+  GroupSymbol,
+  ContactSymbol,
 } from './ContactsListItem.styled';
 import { ContactDetails } from '../ContactDetails/ContactDetails';
 import { useState } from 'react';
@@ -37,7 +38,7 @@ export const ContactsListItem = ({ contacts, filter }) => {
         {Object.entries(groupedContacts).map(([symbol, contacts]) => {
           return (
             <GroupContainer key={symbol}>
-              <p>{symbol}</p>
+              <GroupSymbol>{symbol}</GroupSymbol>
               <ContactsContainer>
                 {contacts.map(({ id, name, phone }) => {
                   return (
@@ -50,9 +51,7 @@ export const ContactsListItem = ({ contacts, filter }) => {
                         exit={'hidden'}
                         variants={show.container}
                       >
-                        <SymbolWrap>
-                          <Symbol>{name[0].toUpperCase()}</Symbol>
-                        </SymbolWrap>
+                        <ContactSymbol>{name[0].toUpperCase()}</ContactSymbol>
                         <Name>{name}</Name>
                       </Contact>
                       <ContactDetails
@@ -68,6 +67,7 @@ export const ContactsListItem = ({ contacts, filter }) => {
             </GroupContainer>
           );
         })}
+        <Div></Div>
       </ContactListWrap>
     </AnimatePresence>
   );

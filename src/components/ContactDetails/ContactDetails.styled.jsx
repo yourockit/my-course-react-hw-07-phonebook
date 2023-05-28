@@ -7,8 +7,9 @@ import { motion } from 'framer-motion';
 export const Details = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  background-color: ${theme.colors.bg};
   width: 100%;
+  background-color: ${theme.colors.bg};
+  padding-left: 65px;
 `;
 
 export const Phone = styled(motion.span)`
@@ -21,8 +22,10 @@ export const Phone = styled(motion.span)`
 
 export const Buttons = styled(motion.div)`
   display: flex;
-  justify-content: space-between;
-  padding: 15px;
+  justify-content: space-around;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
 `;
 
 export const IconBtnDelete = styled(IconDelete)`

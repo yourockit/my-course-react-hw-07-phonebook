@@ -3,34 +3,64 @@ import { theme } from 'components/thems/theme';
 import { motion } from 'framer-motion';
 
 export const ContactListWrap = styled.div`
-  padding-top: 120px;
+  padding-top: 100px;
 `;
 
-export const GroupContainer = styled.div``;
+export const Div = styled.div`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 105px;
+  width: 100%;
+  background-color: ${theme.colors.bg};
+  z-index: -1;
+`;
+
+export const GroupContainer = styled.div`
+  background-color: ${theme.colors.bgSecodary};
+  margin: 5px;
+`;
+
+export const GroupSymbol = styled.p`
+  display: flex;
+  align-items: center;
+  height: 60px;
+  font-size: 32px;
+  color: ${theme.colors.fontSecondary};
+  background-color: ${theme.colors.bg};
+  padding-left: 10px;
+  margin: 0;
+`;
 
 export const ContactsContainer = styled.ul`
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
   justify-content: space-between;
   padding: 0;
-  margin: 5px;
+  margin: 0;
 `;
 
 export const Item = styled.li`
   display: flex;
   flex-wrap: wrap;
-  height: 180px;
-  width: calc((100% - 20px) / 2);
-  margin: 5px;
+  width: 100%;
+  border-bottom: 5px solid ${theme.colors.bg};
+  &:last-child {
+    border-bottom: none;
+  }
+  /* margin-top: 5px; */
 `;
 
 export const Contact = styled(motion.div)`
   display: flex;
-  flex-direction: column;
+  /* flex-direction: row; */
+  align-items: center;
+  height: 40px;
   width: 100%;
-  background-color: ${theme.colors.bgSecodary};
+  /* background-color: ${theme.colors.bgSecodary}; */
   padding: 0;
-  margin-top: 5px;
+  /* margin-top: 5px; */
   -webkit-tap-highlight-color: transparent;
   transition: background-color 200ms;
   &:hover {
@@ -41,18 +71,17 @@ export const Contact = styled(motion.div)`
   }
 `;
 
-export const SymbolWrap = styled.div``;
-
-export const Symbol = styled.span`
+export const ContactSymbol = styled.p`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 42px;
-  width: 42px;
+  height: 40px;
+  width: 40px;
   background-color: ${theme.colors.bg};
   font-size: 32px;
   font-weight: bold;
   color: ${theme.colors.font};
+  margin: 0;
   margin-left: 15px;
 `;
 
@@ -60,11 +89,11 @@ export const Name = styled.p`
   display: flex;
   align-items: center;
   overflow: hidden;
-  height: 100%;
+  width: calc(100% - 100px);
+  height: 40px;
   font-size: 18px;
-  color: ${theme.colors.font};
   font-weight: 400;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin: 0;
+  color: ${theme.colors.font};
+  /* border-bottom: 2px solid ${theme.colors.bg}; */
+  margin: 0 15px 0 15px;
 `;
