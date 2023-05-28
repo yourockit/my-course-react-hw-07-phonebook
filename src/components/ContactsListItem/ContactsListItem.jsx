@@ -1,6 +1,7 @@
 import {
   ContactListWrap,
-  Container,
+  GroupContainer,
+  ContactsContainer,
   Contact,
   Item,
   Symbol,
@@ -9,6 +10,8 @@ import {
 } from './ContactsListItem.styled';
 import { ContactDetails } from '../ContactDetails/ContactDetails';
 import { useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
+import { show } from './ContactsListItemMotion.styled';
 
 export const ContactsListItem = ({ contacts, filter }) => {
   const [selectedContact, setSelectedContact] = useState(null);
@@ -29,34 +32,43 @@ export const ContactsListItem = ({ contacts, filter }) => {
   };
 
   return (
-    <ContactListWrap>
-      {Object.entries(groupedContacts).map(([symbol, contacts]) => {
-        return (
-          <div key={symbol}>
-            <p>{symbol}</p>
-            <Container>
-              {contacts.map(({ id, name, phone }) => {
-                return (
-                  <Item key={id}>
-                    <Contact onClick={() => handleClick(id)}>
-                      <SymbolWrap>
-                        <Symbol>{name[0].toUpperCase()}</Symbol>
-                      </SymbolWrap>
-                      <Name>{name}</Name>
-                    </Contact>
-                    <ContactDetails
-                      selectedContact={selectedContact}
-                      id={id}
-                      name={name}
-                      phone={phone}
-                    />
-                  </Item>
-                );
-              })}
-            </Container>
-          </div>
-        );
-      })}
-    </ContactListWrap>
+    <AnimatePresence>
+      <ContactListWrap>
+        {Object.entries(groupedContacts).map(([symbol, contacts]) => {
+          return (
+            <GroupContainer key={symbol}>
+              <p>{symbol}</p>
+              <ContactsContainer>
+                {contacts.map(({ id, name, phone }) => {
+                  return (
+                    <Item key={id}>
+                      <Contact
+                        onClick={() => handleClick(id)}
+                        key="details"
+                        initial="hidden"
+                        animate={selectedContact === id ? 'show' : 'hidden'}
+                        exit={'hidden'}
+                        variants={show.container}
+                      >
+                        <SymbolWrap>
+                          <Symbol>{name[0].toUpperCase()}</Symbol>
+                        </SymbolWrap>
+                        <Name>{name}</Name>
+                      </Contact>
+                      <ContactDetails
+                        selectedContact={selectedContact}
+                        id={id}
+                        name={name}
+                        phone={phone}
+                      />
+                    </Item>
+                  );
+                })}
+              </ContactsContainer>
+            </GroupContainer>
+          );
+        })}
+      </ContactListWrap>
+    </AnimatePresence>
   );
 };

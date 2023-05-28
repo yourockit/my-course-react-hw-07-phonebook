@@ -5,8 +5,8 @@ export const Btn = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   color: ${theme.colors.secondary};
   border: none;
   background-color: ${theme.colors.btn};

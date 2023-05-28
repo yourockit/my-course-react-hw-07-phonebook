@@ -19,8 +19,8 @@ import {
 import { Button } from 'components/Buttons/Buttons';
 
 const schema = yup.object().shape({
-  name: yup.string().required('Name is required'),
-  phone: yup.string().required('Telephone number is required'),
+  name: yup.string().max(32).required('Name is required'),
+  phone: yup.string().max(16).required('Telephone number is required'),
 });
 
 export const ContactForm = ({ id, name, phone, toggleModal }) => {

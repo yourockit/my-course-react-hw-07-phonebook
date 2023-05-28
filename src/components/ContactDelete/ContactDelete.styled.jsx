@@ -6,6 +6,7 @@ export const Buttons = styled.div`
   display: flex;
   justify-content: space-around;
   width: 100%;
+  padding: 15px;
 `;
 
 export const IconBtnOk = styled(IconOk)`

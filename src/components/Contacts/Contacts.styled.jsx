@@ -12,29 +12,30 @@ export const SearchFixed = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  padding-bottom: 10px;
   z-index: 999;
 `;
 
 export const SearchWrap = styled.div`
   max-width: 480px;
-  background-color: ${theme.colors.bgSecodary};
-  box-shadow: 0 8px 8px 0px ${theme.colors.shadow};
+  background-color: ${theme.colors.bg};
   margin: auto;
 `;
 
+export const TitleWrap = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+`;
+
 export const Title = styled.p`
-  text-align: center;
-  font-size: 18px;
+  font-size: 32px;
+  font-weight: bold;
   color: ${theme.colors.font};
-  padding-top: 15px;
   margin: 0;
 `;
 
 export const Search = styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding: 15px;
+  padding-bottom: 15px;
 `;
 
 export const IconBtnAdd = styled(IconAdd)`

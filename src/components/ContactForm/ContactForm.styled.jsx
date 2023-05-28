@@ -30,7 +30,7 @@ export const Title = styled.p`
 export const Input = styled(Field)`
   width: 90%;
   font-size: 18px;
-  height: 50px;
+  height: 40px;
   padding: 0 0 0 5px;
   border: none;
   margin: auto;
@@ -56,7 +56,7 @@ export const Buttons = styled.div`
   display: flex;
   justify-content: space-around;
   width: 100%;
-  padding-top: 45px;
+  padding: 15px;
 `;
 
 export const IconBtnAdd = styled(IconAdd)`

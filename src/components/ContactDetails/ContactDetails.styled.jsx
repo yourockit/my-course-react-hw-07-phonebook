@@ -8,12 +8,11 @@ export const Details = styled(motion.div)`
   display: flex;
   flex-direction: column;
   background-color: ${theme.colors.bg};
-  max-height: auto;
-  padding-left: 80px;
+  width: 100%;
 `;
 
 export const Phone = styled(motion.span)`
-  font-size: 24px;
+  font-size: 20px;
   color: ${theme.colors.font};
   font-weight: bold;
   margin-top: 15px;
@@ -22,8 +21,8 @@ export const Phone = styled(motion.span)`
 
 export const Buttons = styled(motion.div)`
   display: flex;
-  justify-content: space-around;
-  padding-bottom: 15px;
+  justify-content: space-between;
+  padding: 15px;
 `;
 
 export const IconBtnDelete = styled(IconDelete)`

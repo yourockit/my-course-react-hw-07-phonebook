@@ -4,6 +4,7 @@ export const theme = {
     secondary: '#2e2e2e',
     bg: '#242424',
     bgSecodary: '#444444',
+    bgOverlayModal: 'rgba(0, 0, 0, 0.8)',
     font: '#ffffff',
     fontSecondary: '#b8b8b8',
     shadow: '#00000020',

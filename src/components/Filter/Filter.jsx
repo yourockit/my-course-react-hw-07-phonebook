@@ -1,11 +1,12 @@
 import { useDispatch } from 'react-redux';
 import { setContactsFilter } from 'redux/filterSlice';
-import { Container, Input } from './Filter.styled';
+import { Container, IconSearch, Input } from './Filter.styled';
 
 export const Filter = () => {
   const dispatch = useDispatch();
   return (
     <Container>
+      <IconSearch />
       <Input
         type="text"
         onChange={e => dispatch(setContactsFilter(e.target.value))}

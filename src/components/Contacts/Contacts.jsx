@@ -9,6 +9,7 @@ import { ContactForm } from 'components/ContactForm/ContactForm';
 import { Button } from 'components/Buttons/Buttons';
 import { Filter } from 'components/Filter/Filter';
 import {
+  TitleWrap,
   IconBtnAdd,
   Container,
   Title,
@@ -37,12 +38,14 @@ export const Contacts = () => {
     <Container>
       <SearchFixed>
         <SearchWrap>
-          <Title>Contacts</Title>
-          <Search>
-            <Filter />
+          <TitleWrap>
+            <Title>Contacts</Title>
             <Button type="button" onClick={toggleModal}>
               <IconBtnAdd />
             </Button>
+          </TitleWrap>
+          <Search>
+            <Filter />
           </Search>
         </SearchWrap>
       </SearchFixed>
