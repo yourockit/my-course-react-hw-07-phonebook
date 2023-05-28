@@ -5,7 +5,7 @@ import { theme } from 'components/thems/theme';
 export const Container = styled.label`
   display: flex;
   align-items: center;
-  width: 60%;
+  width: 250px;
   border-bottom: 2px solid ${theme.colors.bgSecodary};
   margin-left: 10px;
 `;
