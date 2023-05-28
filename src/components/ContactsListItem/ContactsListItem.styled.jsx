@@ -17,7 +17,6 @@ export const Div = styled.div`
 `;
 
 export const GroupContainer = styled.div`
-  background-color: ${theme.colors.bgSecodary};
   margin: 5px;
 `;
 
@@ -28,7 +27,7 @@ export const GroupSymbol = styled.p`
   font-size: 32px;
   color: ${theme.colors.fontSecondary};
   background-color: ${theme.colors.bg};
-  padding-left: 10px;
+  /* padding-left: 5px; */
   margin: 0;
 `;
 
@@ -55,11 +54,14 @@ export const Item = styled.li`
 export const Contact = styled(motion.div)`
   display: flex;
   /* flex-direction: row; */
-  align-items: center;
+  /* align-items: center; */
   height: 40px;
   width: 100%;
+  background-color: ${theme.colors.bgSecodary};
+  /* border: 1px solid ${theme.colors.bgSecodary}; */
+  border-radius: 8px;
   /* background-color: ${theme.colors.bgSecodary}; */
-  padding: 0;
+  padding: 0 0 10px 0;
   /* margin-top: 5px; */
   -webkit-tap-highlight-color: transparent;
   transition: background-color 200ms;
@@ -78,6 +80,7 @@ export const ContactSymbol = styled.p`
   height: 40px;
   width: 40px;
   background-color: ${theme.colors.bg};
+  border-radius: 0 0 8px 8px;
   font-size: 32px;
   font-weight: bold;
   color: ${theme.colors.font};
@@ -87,10 +90,10 @@ export const ContactSymbol = styled.p`
 
 export const Name = styled.p`
   display: flex;
-  align-items: center;
+  align-items: end;
   overflow: hidden;
   width: calc(100% - 100px);
-  height: 40px;
+  height: 35px;
   font-size: 18px;
   font-weight: 400;
   color: ${theme.colors.font};

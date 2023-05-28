@@ -31,8 +31,9 @@ export const Input = styled(Field)`
   width: 90%;
   font-size: 18px;
   height: 40px;
-  padding: 0 0 0 5px;
   border: none;
+  border-radius: 8px;
+  padding: 0 0 0 5px;
   margin: auto;
   &:active,
   :focus {

@@ -20,6 +20,7 @@ export const ModalViewer = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   background-color: ${theme.colors.bgSecodary};
+  border-radius: 8px;
   width: calc(100vw - 10%);
   padding-top: 15px;
   padding-bottom: 15px;

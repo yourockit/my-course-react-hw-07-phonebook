@@ -9,6 +9,7 @@ export const Btn = styled.button`
   height: 40px;
   color: ${theme.colors.secondary};
   border: none;
+  border-radius: 8px;
   background-color: ${theme.colors.btn};
   -webkit-tap-highlight-color: transparent;
   transition: background-color 50ms, box-shadow 50ms;
