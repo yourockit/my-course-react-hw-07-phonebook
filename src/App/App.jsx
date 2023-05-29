@@ -1,5 +1,5 @@
 import { AppWrap, Container } from './App.styled';
-import { Contacts } from './Contacts/Contacts';
+import { Contacts } from '../components/Contacts/Contacts';
 
 export const App = () => {
   return (

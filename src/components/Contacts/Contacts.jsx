@@ -31,7 +31,7 @@ export const Contacts = () => {
         <SearchWrap>
           <TitleWrap>
             <Title>Contacts</Title>
-            <Button type="button" onClick={toggleModal}>
+            <Button type="button" onClick={toggleModal} isLoading={isLoading}>
               <IconBtnAdd />
             </Button>
           </TitleWrap>

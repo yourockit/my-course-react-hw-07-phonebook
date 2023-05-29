@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { theme } from 'components/thems/theme';
-import { motion } from 'framer-motion';
 
 export const ContactListWrap = styled.div`
   padding-top: 100px;
@@ -18,13 +17,11 @@ export const GroupSymbol = styled.p`
   font-size: 32px;
   color: ${theme.colors.fontSecondary};
   background-color: ${theme.colors.bg};
-  /* padding-left: 5px; */
   margin: 0;
 `;
 
 export const ContactsContainer = styled.ul`
   display: flex;
-  /* flex-wrap: wrap; */
   flex-direction: column;
   justify-content: space-between;
   margin: 0;
@@ -38,21 +35,13 @@ export const Item = styled.li`
   &:last-child {
     border-bottom: none;
   }
-  /* margin-top: 5px; */
 `;
 
-export const Contact = styled(motion.div)`
+export const Contact = styled.div`
   display: flex;
-  /* flex-direction: row; */
-  /* align-items: center; */
-  height: 40px;
   width: 100%;
   background-color: ${theme.colors.bgSecodary};
-  /* border: 1px solid ${theme.colors.bgSecodary}; */
   border-radius: 8px;
-  /* background-color: ${theme.colors.bgSecodary}; */
-  padding: 0 0 10px 0;
-  /* margin-top: 5px; */
   -webkit-tap-highlight-color: transparent;
   transition: background-color 200ms;
   &:hover {
@@ -74,21 +63,18 @@ export const ContactSymbol = styled.p`
   font-size: 32px;
   font-weight: bold;
   color: ${theme.colors.font};
-  margin: 0;
-  margin-left: 15px;
+  margin: 0 10px 10px 15px;
 `;
 
 export const Name = styled.p`
   display: flex;
-  align-items: end;
+  align-items: center;
   overflow: hidden;
   width: calc(100% - 100px);
-  height: 35px;
   font-size: 18px;
   font-weight: 400;
   color: ${theme.colors.font};
-  /* border-bottom: 2px solid ${theme.colors.bg}; */
-  margin: 0 15px 0 15px;
+  margin: 5px;
 `;
 
 export const Div = styled.div`

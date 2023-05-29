@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { theme } from 'components/thems/theme';
 import { motion } from 'framer-motion';
+import { ModalViewerDesctop } from './ModalDesctop.styled';
 
 export const Overlay = styled(motion.div)`
   display: flex;
@@ -24,10 +25,7 @@ export const ModalViewer = styled(motion.div)`
   width: calc(100vw - 10%);
   padding-top: 15px;
   padding-bottom: 15px;
-  @media screen and (min-width: 480px) {
-    width: 450px;
-    margin: auto;
-  }
+  ${ModalViewerDesctop}
 `;
 
 export const Title = styled.p`

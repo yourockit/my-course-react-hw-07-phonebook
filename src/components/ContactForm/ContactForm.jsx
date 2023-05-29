@@ -21,7 +21,9 @@ import { toast } from 'react-toastify';
 
 const schema = yup.object().shape({
   name: yup.string().max(32).required('Name is required'),
-  phone: yup.string().max(16).required('Telephone number is required'),
+  phone: yup
+    .number('Phone must be a number')
+    .required('Telephone number is required'),
 });
 
 export const ContactForm = ({ id, name, phone, toggleModal }) => {
@@ -29,7 +31,7 @@ export const ContactForm = ({ id, name, phone, toggleModal }) => {
   const [updateContact] = useUpdateContactMutation();
   const { data: contacts } = useFetchContactsQuery();
 
-  const handleSubmit = async e => {
+  const onHandleSubmit = async e => {
     const contact = {
       name: e.name,
       phone: e.phone,
@@ -68,7 +70,7 @@ export const ContactForm = ({ id, name, phone, toggleModal }) => {
         phone: phone,
       }}
       validationSchema={schema}
-      onSubmit={handleSubmit}
+      onSubmit={onHandleSubmit}
     >
       <Container>
         <Label>
