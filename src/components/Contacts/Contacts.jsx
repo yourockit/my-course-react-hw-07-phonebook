@@ -50,6 +50,7 @@ export const Contacts = () => {
         </SearchWrap>
       </SearchFixed>
       {isLoading && <Loading />}
+      {/* <Loading /> */}
       {contacts && <ContactsListItem contacts={contacts} filter={filter} />}
       <Modal
         showModal={isShowModal}

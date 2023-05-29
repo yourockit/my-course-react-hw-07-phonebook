@@ -1,23 +1,31 @@
 import styled from '@emotion/styled';
 import { theme } from 'components/thems/theme';
+import { motion } from 'framer-motion';
 
-export const ContactsContainer = styled.ul`
+export const ContactListWrap = styled(motion.ul)`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  overflow-y: hidden;
-  padding: 0;
-  padding-top: 120px;
-  margin: 0;
+  padding-top: 85px;
 `;
 
-export const GroupSymbol = styled.p`
+export const ContactsGroup = styled(motion.li)`
+  margin: 5px;
+`;
+
+export const ContactsContainer = styled.ul``;
+
+export const GroupSymbolWrap = styled.div`
   display: flex;
   align-items: center;
-  height: 55px;
-  width: 55px;
+  height: 60px;
+`;
+
+export const GroupSymbol = styled(motion.div)`
+  display: flex;
+  align-items: center;
+  height: 32px;
+  width: 32px;
   background-color: ${theme.colors.bgSecodary};
-  margin: 0;
   margin-bottom: 5px;
 `;
 
@@ -42,7 +50,7 @@ export const Contact = styled.div`
   transition: background-color 200ms;
 `;
 
-export const ContactSymbol = styled.p`
+export const ContactSymbol = styled(motion.p)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,16 +63,4 @@ export const ContactSymbol = styled.p`
   color: ${theme.colors.font};
   margin: 0;
   margin-left: 15px;
-`;
-
-export const Name = styled.p`
-  display: flex;
-  align-items: end;
-  overflow: hidden;
-  width: calc(100% - 100px);
-  height: 35px;
-  font-size: 18px;
-  font-weight: 400;
-  color: ${theme.colors.font};
-  margin: 0 15px 0 15px;
 `;

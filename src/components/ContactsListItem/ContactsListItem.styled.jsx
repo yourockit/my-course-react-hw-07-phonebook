@@ -6,16 +6,6 @@ export const ContactListWrap = styled.div`
   padding-top: 100px;
 `;
 
-export const Div = styled.div`
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  height: 105px;
-  width: 100%;
-  background-color: ${theme.colors.bg};
-  z-index: -1;
-`;
-
 export const GroupContainer = styled.div`
   margin: 5px;
 `;
@@ -36,7 +26,6 @@ export const ContactsContainer = styled.ul`
   /* flex-wrap: wrap; */
   flex-direction: column;
   justify-content: space-between;
-  padding: 0;
   margin: 0;
 `;
 
@@ -99,4 +88,14 @@ export const Name = styled.p`
   color: ${theme.colors.font};
   /* border-bottom: 2px solid ${theme.colors.bg}; */
   margin: 0 15px 0 15px;
+`;
+
+export const Div = styled.div`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 105px;
+  width: 100%;
+  background-color: ${theme.colors.bg};
+  z-index: -1;
 `;
