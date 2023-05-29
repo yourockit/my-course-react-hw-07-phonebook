@@ -35,7 +35,7 @@ export const Title = styled.p`
 `;
 
 export const Search = styled.div`
-  padding-bottom: 10px;
+  margin-bottom: 10px;
 `;
 
 export const IconBtnAdd = styled(IconAdd)`

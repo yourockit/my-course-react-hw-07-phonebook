@@ -1,7 +1,6 @@
 import { useSelector } from 'react-redux';
 import { useFetchContactsQuery } from 'redux/contactsApi';
 import { getFilter } from 'redux/filterSlice';
-// import { getSelectedContact } from 'redux/selectedContactByIdSlice';
 import { ContactsListItem } from 'components/ContactsListItem/ContactsListItem';
 import { Modal } from 'components/Modal/Modal';
 import useModal from '../../services/hooks/useModal';
@@ -18,21 +17,13 @@ import {
   SearchWrap,
 } from './Contacts.styled';
 import { Loading } from 'components/Loading/Loading';
+import { Slide, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const Contacts = () => {
   const { data: contacts, isLoading } = useFetchContactsQuery();
   const filter = useSelector(getFilter);
-  // const selectedContactById = useSelector(getSelectedContact);
   const [isShowModal, toggleModal] = useModal();
-
-  // if (!contacts) {
-  //   return;
-  // }
-  // const contactsId = contacts.map(contact => contact.id);
-  // const selectedId = contactsId.includes(selectedContactById);
-  // if (!selectedId && selectedContactById !== null) {
-  //   alert('DELETED');
-  // }
 
   return (
     <Container>
@@ -50,7 +41,6 @@ export const Contacts = () => {
         </SearchWrap>
       </SearchFixed>
       {isLoading && <Loading />}
-      {/* <Loading /> */}
       {contacts && <ContactsListItem contacts={contacts} filter={filter} />}
       <Modal
         showModal={isShowModal}
@@ -59,6 +49,19 @@ export const Contacts = () => {
       >
         <ContactForm toggleModal={toggleModal} name={''} phone={''} />
       </Modal>
+      <ToastContainer
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        transition={Slide}
+      />
     </Container>
   );
 };

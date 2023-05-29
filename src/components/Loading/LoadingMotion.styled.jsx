@@ -17,7 +17,7 @@ export const show = {
 
 export const loading = {
   rotate: [0, 0, 180, 180, 0],
-  borderRadius: ['0%', '0%', '50%', '50%', '0%'],
+  borderRadius: ['8px', '8px', '50%', '50%', '8px'],
   transition: {
     duration: 2,
     ease: 'easeInOut',

@@ -7,7 +7,8 @@ export const ContactListWrap = styled.div`
 `;
 
 export const GroupContainer = styled.div`
-  margin: 5px;
+  margin-left: 5px;
+  margin-left: 5px;
 `;
 
 export const GroupSymbol = styled.p`

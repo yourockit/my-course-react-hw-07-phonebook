@@ -32,8 +32,7 @@ export const Modal = ({ showModal, children, title, name, closeModal }) => {
         >
           <ModalViewer variants={show.item}>
             <Title>
-              {title}
-              {name}
+              {title}: {name}
             </Title>
             <ContentWrap>{children}</ContentWrap>
           </ModalViewer>

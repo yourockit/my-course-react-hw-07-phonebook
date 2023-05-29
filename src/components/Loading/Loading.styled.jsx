@@ -9,7 +9,8 @@ export const ContactListWrap = styled(motion.ul)`
 `;
 
 export const ContactsGroup = styled(motion.li)`
-  margin: 5px;
+  margin-left: 5px;
+  margin-left: 5px;
 `;
 
 export const ContactsContainer = styled.ul``;

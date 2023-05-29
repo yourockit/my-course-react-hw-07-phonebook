@@ -17,6 +17,7 @@ import {
   ErrorWrap,
 } from './ContactForm.styled';
 import { Button } from 'components/Buttons/Buttons';
+import { toast } from 'react-toastify';
 
 const schema = yup.object().shape({
   name: yup.string().max(32).required('Name is required'),
@@ -34,15 +35,17 @@ export const ContactForm = ({ id, name, phone, toggleModal }) => {
       phone: e.phone,
     };
 
+    if (!contacts) {
+      await createContact(contact).unwrap().then(toggleModal());
+      return;
+    }
     const isInContacts = contacts.some(
-      contact =>
-        contact.name.toLowerCase() === e.name.toLowerCase() &&
-        contact.phone === e.phone
+      contact => contact.name === e.name && contact.phone === e.phone
     );
 
     if (isInContacts) {
-      alert(
-        `Contact ${contact.name} with number ${contact.phone} is alredy exist`
+      toast.warning(
+        `Contact: ${contact.name} with number: ${contact.phone} is alredy exist`
       );
       return;
     }
@@ -52,8 +55,9 @@ export const ContactForm = ({ id, name, phone, toggleModal }) => {
       } else {
         await createContact(contact).unwrap().then(toggleModal());
       }
+      toast.success('OK');
     } catch (error) {
-      console.log('ERROR');
+      toast.error(error.status);
     }
   };
 
