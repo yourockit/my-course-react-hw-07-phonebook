@@ -10,6 +10,12 @@ export const Details = styled(motion.div)`
   width: 100%;
   background-color: ${theme.colors.bg};
   padding-left: 65px;
+  @media screen and (min-width: ${theme.width.desktop}) {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding-left: 15px;
+  }
 `;
 
 export const Phone = styled(motion.span)`
@@ -23,9 +29,7 @@ export const Phone = styled(motion.span)`
 export const Buttons = styled(motion.div)`
   display: flex;
   justify-content: space-around;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 15px;
+  padding: 0 15px 15px 0;
 `;
 
 export const IconBtnDelete = styled(IconDelete)`

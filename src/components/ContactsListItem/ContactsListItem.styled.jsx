@@ -30,11 +30,9 @@ export const ContactsContainer = styled.ul`
   flex-direction: column;
   justify-content: space-between;
   @media screen and (min-width: ${theme.width.desktop}) {
-    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: start;
-    margin: 0;
   }
 `;
 
@@ -47,6 +45,7 @@ export const Item = styled.li`
     border-bottom: none;
   }
   @media screen and (min-width: ${theme.width.desktop}) {
+    position: relative;
     width: 270px;
     height: 160px;
     border: none;
@@ -102,4 +101,7 @@ export const Div = styled.div`
   width: 100%;
   background-color: ${theme.colors.bg};
   z-index: -1;
+  @media screen and (min-width: ${theme.width.desktop}) {
+    display: none;
+  }
 `;

@@ -26,13 +26,7 @@ const schema = yup.object().shape({
     .required('Telephone number is required'),
 });
 
-export const ContactForm = ({
-  id,
-  name,
-  phone,
-  toggleModal,
-  onCreateContactId,
-}) => {
+export const ContactForm = ({ id, name, phone, toggleModal, contactId }) => {
   const [createContact] = useCreateContactMutation();
   const [updateContact] = useUpdateContactMutation();
   const { data: contacts } = useFetchContactsQuery();
@@ -44,8 +38,8 @@ export const ContactForm = ({
     };
 
     //SCROLL-TO CREATED OR EDITED CONTACT===
-    const onCreatedContact = e => {
-      onCreateContactId(e.id);
+    const onContactAction = e => {
+      contactId(e.id);
     };
     //======================================
 
@@ -65,15 +59,12 @@ export const ContactForm = ({
     }
     try {
       if (name && phone) {
-        await updateContact({ id, contact })
-          .unwrap()
-          .then(toggleModal())
-          .then(onCreatedContact);
+        await updateContact({ id, contact }).unwrap().then(toggleModal());
       } else {
         await createContact(contact)
           .unwrap()
           .then(toggleModal())
-          .then(onCreatedContact);
+          .then(onContactAction);
       }
       toast.success('OK');
     } catch (error) {

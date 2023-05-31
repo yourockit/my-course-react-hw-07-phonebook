@@ -19,4 +19,7 @@ export const Btn = styled.button`
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
     background-color: ${theme.colors.btnActiveSecondary};
   }
+  @media screen and (min-width: ${theme.width.desktop}) {
+    width: 80px;
+  }
 `;

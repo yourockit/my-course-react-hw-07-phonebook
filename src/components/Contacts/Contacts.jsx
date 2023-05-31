@@ -25,11 +25,13 @@ export const Contacts = () => {
   const { data: contacts, isLoading } = useFetchContactsQuery();
   const filter = useSelector(getFilter);
   const [isShowModal, toggleModal] = useModal();
-  const [valueScrollTo, setValueScrollTo] = useState('');
 
-  const onCreatedContactId = value => {
+  //SCROLL-TO CREATED OR EDITED CONTACT===
+  const [valueScrollTo, setValueScrollTo] = useState('');
+  const onContaсtAction = value => {
     setValueScrollTo(value);
   };
+  //======================================
 
   return (
     <Container>
@@ -63,7 +65,7 @@ export const Contacts = () => {
           toggleModal={toggleModal}
           name={''}
           phone={''}
-          onCreateContactId={onCreatedContactId}
+          contactId={onContaсtAction}
         />
       </Modal>
       <ToastContainer

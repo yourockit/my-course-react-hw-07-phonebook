@@ -42,6 +42,7 @@ export const ContactsListItem = ({ contacts, filter, valueScrollTo }) => {
         behavior: 'smooth',
         block: 'center',
       });
+      contactsListRef.current = null;
     }
   }, [contacts]);
   //======================================
