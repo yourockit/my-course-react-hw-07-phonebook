@@ -16,7 +16,7 @@ export const SearchFixed = styled.div`
 `;
 
 export const SearchWrap = styled.div`
-  max-width: 480px;
+  max-width: 1200px;
   background-color: ${theme.colors.bg};
   margin: auto;
 `;
@@ -24,7 +24,7 @@ export const SearchWrap = styled.div`
 export const TitleWrap = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  padding: 15px;
 `;
 
 export const Title = styled.p`
@@ -35,7 +35,7 @@ export const Title = styled.p`
 `;
 
 export const Search = styled.div`
-  margin-bottom: 10px;
+  padding: 0 15px 15px 15px;
 `;
 
 export const IconBtnAdd = styled(IconAdd)`

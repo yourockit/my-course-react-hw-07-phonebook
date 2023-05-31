@@ -5,19 +5,32 @@ import { motion } from 'framer-motion';
 export const ContactListWrap = styled(motion.ul)`
   display: flex;
   flex-direction: column;
-  padding-top: 85px;
+  padding-top: 130px;
+  margin: 0;
 `;
 
 export const ContactsGroup = styled(motion.li)`
   margin-left: 5px;
   margin-left: 5px;
+  @media screen and (min-width: ${theme.width.desktop}) {
+    margin: 0;
+  }
 `;
 
-export const ContactsContainer = styled.ul``;
+export const ContactsContainer = styled.ul`
+  @media screen and (min-width: ${theme.width.desktop}) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    margin: 0;
+  }
+`;
 
 export const GroupSymbolWrap = styled.div`
   display: flex;
   align-items: center;
+  justify-content: end;
   height: 60px;
 `;
 
@@ -28,15 +41,24 @@ export const GroupSymbol = styled(motion.div)`
   width: 32px;
   background-color: ${theme.colors.bgSecodary};
   margin-bottom: 5px;
+  margin-right: 15px;
 `;
 
 export const Item = styled.li`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  background-color: ${theme.colors.bgSecodary};
   border-bottom: 5px solid ${theme.colors.bg};
+  border-radius: 8px;
   &:last-child {
     border-bottom: none;
+  }
+  @media screen and (min-width: ${theme.width.desktop}) {
+    width: 270px;
+    height: 160px;
+    border: none;
+    margin: 15px;
   }
 `;
 

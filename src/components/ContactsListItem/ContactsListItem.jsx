@@ -1,5 +1,5 @@
 import {
-  ContactListWrap,
+  ContactsListWrap,
   GroupContainer,
   ContactsContainer,
   Contact,
@@ -10,14 +10,16 @@ import {
   ContactSymbol,
 } from './ContactsListItem.styled';
 import { ContactDetails } from '../ContactDetails/ContactDetails';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-export const ContactsListItem = ({ contacts, filter }) => {
+export const ContactsListItem = ({ contacts, filter, valueScrollTo }) => {
   const [selectedContact, setSelectedContact] = useState(null);
   const filteredContacts = contacts.filter(contact =>
     contact.name.toLowerCase().includes(filter.toLowerCase())
   );
   filteredContacts.sort((a, b) => a.name.localeCompare(b.name));
+
+  //GROUP-CONTACTS======================
   const groupedContacts = {};
   filteredContacts.map(contact => {
     const firstLeter = contact.name[0].toUpperCase();
@@ -26,12 +28,26 @@ export const ContactsListItem = ({ contacts, filter }) => {
     }
     return groupedContacts[firstLeter].push(contact);
   });
+  //======================================
+
   const handleClick = id => {
     setSelectedContact(id === selectedContact ? null : id);
   };
 
+  //SCROLL-TO CREATED OR EDITED CONTACT===
+  const contactsListRef = useRef(null);
+  useEffect(() => {
+    if (contactsListRef.current) {
+      contactsListRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+      });
+    }
+  }, [contacts]);
+  //======================================
+
   return (
-    <ContactListWrap>
+    <ContactsListWrap>
       {Object.entries(groupedContacts).map(([symbol, contacts]) => {
         return (
           <GroupContainer key={symbol}>
@@ -39,7 +55,10 @@ export const ContactsListItem = ({ contacts, filter }) => {
             <ContactsContainer>
               {contacts.map(({ id, name, phone }) => {
                 return (
-                  <Item key={id}>
+                  <Item
+                    key={id}
+                    ref={id === valueScrollTo ? contactsListRef : null}
+                  >
                     <Contact onClick={() => handleClick(id)}>
                       <ContactSymbol>{name[0].toUpperCase()}</ContactSymbol>
                       <Name>{name}</Name>
@@ -58,6 +77,6 @@ export const ContactsListItem = ({ contacts, filter }) => {
         );
       })}
       <Div></Div>
-    </ContactListWrap>
+    </ContactsListWrap>
   );
 };

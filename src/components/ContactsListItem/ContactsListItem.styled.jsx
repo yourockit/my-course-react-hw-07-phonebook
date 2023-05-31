@@ -1,30 +1,41 @@
 import styled from '@emotion/styled';
 import { theme } from 'components/thems/theme';
 
-export const ContactListWrap = styled.div`
-  padding-top: 100px;
+export const ContactsListWrap = styled.ul`
+  padding-top: 130px;
+  margin: 0;
 `;
 
-export const GroupContainer = styled.div`
+export const GroupContainer = styled.li`
   margin-left: 5px;
-  margin-left: 5px;
+  margin-right: 5px;
+  @media screen and (min-width: ${theme.width.desktop}) {
+    margin: 0;
+  }
 `;
 
 export const GroupSymbol = styled.p`
   display: flex;
   align-items: center;
+  justify-content: end;
   height: 60px;
   font-size: 32px;
   color: ${theme.colors.fontSecondary};
   background-color: ${theme.colors.bg};
-  margin: 0;
+  margin-right: 15px;
 `;
 
 export const ContactsContainer = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 0;
+  @media screen and (min-width: ${theme.width.desktop}) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    margin: 0;
+  }
 `;
 
 export const Item = styled.li`
@@ -34,6 +45,12 @@ export const Item = styled.li`
   border-bottom: 5px solid ${theme.colors.bg};
   &:last-child {
     border-bottom: none;
+  }
+  @media screen and (min-width: ${theme.width.desktop}) {
+    width: 270px;
+    height: 160px;
+    border: none;
+    margin: 15px;
   }
 `;
 
@@ -63,7 +80,7 @@ export const ContactSymbol = styled.p`
   font-size: 32px;
   font-weight: bold;
   color: ${theme.colors.font};
-  margin: 0 10px 10px 15px;
+  margin: 0 10px 10px 10px;
 `;
 
 export const Name = styled.p`

@@ -5,9 +5,9 @@ import { theme } from 'components/thems/theme';
 export const Container = styled.label`
   display: flex;
   align-items: center;
-  width: 250px;
+  width: 60%;
+  min-width: 240px;
   border-bottom: 2px solid ${theme.colors.bgSecodary};
-  margin-left: 10px;
 `;
 
 export const Input = styled.input`

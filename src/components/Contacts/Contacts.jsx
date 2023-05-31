@@ -19,11 +19,17 @@ import {
 import { Loading } from 'components/Loading/Loading';
 import { Slide, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useState } from 'react';
 
 export const Contacts = () => {
   const { data: contacts, isLoading } = useFetchContactsQuery();
   const filter = useSelector(getFilter);
   const [isShowModal, toggleModal] = useModal();
+  const [valueScrollTo, setValueScrollTo] = useState('');
+
+  const onCreatedContactId = value => {
+    setValueScrollTo(value);
+  };
 
   return (
     <Container>
@@ -41,13 +47,24 @@ export const Contacts = () => {
         </SearchWrap>
       </SearchFixed>
       {isLoading && <Loading />}
-      {contacts && <ContactsListItem contacts={contacts} filter={filter} />}
+      {contacts && (
+        <ContactsListItem
+          contacts={contacts}
+          filter={filter}
+          valueScrollTo={valueScrollTo}
+        />
+      )}
       <Modal
         showModal={isShowModal}
         title="Add Contact"
         closeModal={toggleModal}
       >
-        <ContactForm toggleModal={toggleModal} name={''} phone={''} />
+        <ContactForm
+          toggleModal={toggleModal}
+          name={''}
+          phone={''}
+          onCreateContactId={onCreatedContactId}
+        />
       </Modal>
       <ToastContainer
         position="top-center"

@@ -13,7 +13,7 @@ import { loading, show } from './LoadingMotion.styled';
 
 export const Loading = () => {
   const arrayGroup = Array.from(Array(4).keys());
-  const arrayItem = Array.from(Array(3).keys());
+  const arrayItem = Array.from(Array(4).keys());
   return (
     <AnimatePresence>
       <ContactListWrap

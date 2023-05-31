@@ -22,11 +22,17 @@ import { toast } from 'react-toastify';
 const schema = yup.object().shape({
   name: yup.string().max(32).required('Name is required'),
   phone: yup
-    .number('Phone must be a number')
+    .string('Phone must be a number')
     .required('Telephone number is required'),
 });
 
-export const ContactForm = ({ id, name, phone, toggleModal }) => {
+export const ContactForm = ({
+  id,
+  name,
+  phone,
+  toggleModal,
+  onCreateContactId,
+}) => {
   const [createContact] = useCreateContactMutation();
   const [updateContact] = useUpdateContactMutation();
   const { data: contacts } = useFetchContactsQuery();
@@ -36,6 +42,12 @@ export const ContactForm = ({ id, name, phone, toggleModal }) => {
       name: e.name,
       phone: e.phone,
     };
+
+    //SCROLL-TO CREATED OR EDITED CONTACT===
+    const onCreatedContact = e => {
+      onCreateContactId(e.id);
+    };
+    //======================================
 
     if (!contacts) {
       await createContact(contact).unwrap().then(toggleModal());
@@ -53,9 +65,15 @@ export const ContactForm = ({ id, name, phone, toggleModal }) => {
     }
     try {
       if (name && phone) {
-        await updateContact({ id, contact }).unwrap().then(toggleModal());
+        await updateContact({ id, contact })
+          .unwrap()
+          .then(toggleModal())
+          .then(onCreatedContact);
       } else {
-        await createContact(contact).unwrap().then(toggleModal());
+        await createContact(contact)
+          .unwrap()
+          .then(toggleModal())
+          .then(onCreatedContact);
       }
       toast.success('OK');
     } catch (error) {

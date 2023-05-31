@@ -14,4 +14,7 @@ export const theme = {
     btnActive: 'rgb(96, 96, 96)',
     btnActiveSecondary: 'rgb(255, 255, 255)',
   },
+  width: {
+    desktop: '768px',
+  },
 };
