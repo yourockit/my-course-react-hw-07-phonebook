@@ -7,19 +7,18 @@ export const Btn = styled.button`
   align-items: center;
   width: 40px;
   height: 40px;
-  color: ${theme.colors.secondary};
+  color: ${theme.colors.white};
   border: none;
-  border-radius: 8px;
-  background-color: ${theme.colors.btn};
+  background-color: transparent;
   -webkit-tap-highlight-color: transparent;
   transition: background-color 50ms, box-shadow 50ms;
   &:hover,
   &:active {
     cursor: pointer;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
-    background-color: ${theme.colors.btnActiveSecondary};
+    background-color: ${theme.colors.blackTransparentHover};
   }
   @media screen and (min-width: ${theme.width.desktop}) {
+    background-color: ${theme.colors.blackTransparent};
     width: 80px;
   }
 `;

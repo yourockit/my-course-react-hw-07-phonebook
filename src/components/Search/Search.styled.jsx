@@ -7,7 +7,7 @@ export const Container = styled.label`
   align-items: center;
   width: 60%;
   min-width: 240px;
-  border-bottom: 2px solid ${theme.colors.bgSecodary};
+  border-bottom: 2px solid ${theme.colors.grey};
 `;
 
 export const Input = styled.input`
@@ -15,8 +15,8 @@ export const Input = styled.input`
   height: 40px;
   border: none;
   padding-left: 5px;
-  color: ${theme.colors.base};
-  background-color: ${theme.colors.bg};
+  color: ${theme.colors.grey};
+  background-color: transparent;
   &:active,
   :focus {
     outline: 0;
@@ -36,5 +36,5 @@ export const IconSearch = styled(IconFind)`
   width: 20px;
   height: 20px;
   border: none;
-  fill: ${theme.colors.base};
+  fill: ${theme.colors.white};
 `;

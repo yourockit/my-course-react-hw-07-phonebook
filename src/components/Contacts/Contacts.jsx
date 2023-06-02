@@ -6,23 +6,23 @@ import { Modal } from 'components/Modal/Modal';
 import useModal from '../../services/hooks/useModal';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { Button } from 'components/Buttons/Buttons';
-import { Filter } from 'components/Filter/Filter';
+import { Search } from 'components/Search/Search';
 import {
   TitleWrap,
   IconBtnAdd,
   Container,
+  HeaderWrap,
   Title,
-  SearchFixed,
-  Search,
+  ContainerFixed,
   SearchWrap,
 } from './Contacts.styled';
 import { Loading } from 'components/Loading/Loading';
-import { Slide, ToastContainer } from 'react-toastify';
+import { Slide, ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from 'react';
 
 export const Contacts = () => {
-  const { data: contacts, isLoading } = useFetchContactsQuery();
+  const { data: contacts, isLoading, isError, error } = useFetchContactsQuery();
   const filter = useSelector(getFilter);
   const [isShowModal, toggleModal] = useModal();
 
@@ -35,20 +35,21 @@ export const Contacts = () => {
 
   return (
     <Container>
-      <SearchFixed>
-        <SearchWrap>
+      <ContainerFixed>
+        <HeaderWrap>
           <TitleWrap>
             <Title>Contacts</Title>
             <Button type="button" onClick={toggleModal} isLoading={isLoading}>
               <IconBtnAdd />
             </Button>
           </TitleWrap>
-          <Search>
-            <Filter />
-          </Search>
-        </SearchWrap>
-      </SearchFixed>
+          <SearchWrap>
+            <Search />
+          </SearchWrap>
+        </HeaderWrap>
+      </ContainerFixed>
       {isLoading && <Loading />}
+      {isError && toast.error(error.status)}
       {contacts && (
         <ContactsListItem
           contacts={contacts}

@@ -11,16 +11,17 @@ export const Overlay = styled(motion.div)`
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: ${theme.colors.bgOverlayModal};
-  z-index: 1200;
+  background-color: ${theme.colors.blackTransparent};
+  backdrop-filter: blur(8px);
+  z-index: 999;
 `;
 
 export const ModalViewer = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: ${theme.colors.bgSecodary};
-  border-radius: 8px;
+  overflow-y: initial;
+  background-color: ${theme.colors.white};
   width: calc(100vw - 10%);
   padding-top: 15px;
   padding-bottom: 15px;
@@ -32,7 +33,7 @@ export const ModalViewer = styled(motion.div)`
 
 export const Title = styled.p`
   font-size: 18px;
-  color: ${theme.colors.font};
+  color: ${theme.colors.black};
   font-weight: 400;
   padding: 15px;
   margin: 0;

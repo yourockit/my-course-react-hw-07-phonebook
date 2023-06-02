@@ -1,8 +1,8 @@
 import { useDispatch } from 'react-redux';
 import { setContactsFilter } from 'redux/filterSlice';
-import { Container, IconSearch, IconWrap, Input } from './Filter.styled';
+import { Container, IconSearch, IconWrap, Input } from './Search.styled';
 
-export const Filter = () => {
+export const Search = () => {
   const dispatch = useDispatch();
   return (
     <Container>

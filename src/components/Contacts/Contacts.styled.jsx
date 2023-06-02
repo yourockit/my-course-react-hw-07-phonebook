@@ -5,37 +5,36 @@ import { theme } from 'components/thems/theme';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  @media screen and (min-width: ${theme.width.desktop}) {
+    max-width: 1200px;
+    margin: auto;
+  }
 `;
 
-export const SearchFixed = styled.div`
+export const ContainerFixed = styled.div`
   position: fixed;
-  top: 0;
-  left: 0;
+  /* top: 0;
+  left: 0; */
   width: 100%;
-  z-index: 999;
+  z-index: 99;
 `;
 
-export const SearchWrap = styled.div`
+export const HeaderWrap = styled.div`
   max-width: 1200px;
-  background-color: ${theme.colors.bg};
-  margin: auto;
+  backdrop-filter: blur(30px);
 `;
 
 export const TitleWrap = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 15px;
+  padding: 10px 10px 0 10px;
 `;
 
 export const Title = styled.p`
   font-size: 32px;
   font-weight: bold;
-  color: ${theme.colors.font};
+  color: ${theme.colors.white};
   margin: 0;
-`;
-
-export const Search = styled.div`
-  padding: 0 15px 15px 15px;
 `;
 
 export const IconBtnAdd = styled(IconAdd)`
@@ -45,8 +44,6 @@ export const IconBtnAdd = styled(IconAdd)`
   fill: currentColor;
 `;
 
-export const ContactsWrap = styled.div`
-  margin: 0;
-  padding: 0;
-  padding-top: 120px;
+export const SearchWrap = styled.div`
+  padding: 0 10px 10px 10px;
 `;

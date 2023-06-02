@@ -22,7 +22,7 @@ export const Label = styled.label`
 export const Title = styled.p`
   width: 90%;
   font-size: 18px;
-  color: ${theme.colors.font};
+  color: ${theme.colors.black};
   padding: 15px;
   margin: auto;
 `;
@@ -32,8 +32,9 @@ export const Input = styled(Field)`
   font-size: 18px;
   height: 40px;
   border: none;
-  border-radius: 8px;
+  border-bottom: 2px solid ${theme.colors.grey};
   padding: 0 0 0 5px;
+  color: ${theme.colors.black};
   margin: auto;
   &:active,
   :focus {
@@ -64,12 +65,12 @@ export const IconBtnAdd = styled(IconAdd)`
   width: 28px;
   height: 28px;
   border: none;
-  fill: currentColor;
+  fill: ${theme.colors.black};
 `;
 
 export const IconBtnCancel = styled(IconCancel)`
   width: 28px;
   height: 28px;
   border: none;
-  fill: currentColor;
+  fill: ${theme.colors.black};
 `;

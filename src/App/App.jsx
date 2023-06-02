@@ -1,12 +1,13 @@
-import { AppWrap, Container } from './App.styled';
+import { Background, Container, Content } from './App.styled';
 import { Contacts } from '../components/Contacts/Contacts';
 
 export const App = () => {
   return (
-    <AppWrap>
-      <Container>
+    <Container>
+      <Background />
+      <Content>
         <Contacts />
-      </Container>
-    </AppWrap>
+      </Content>
+    </Container>
   );
 };

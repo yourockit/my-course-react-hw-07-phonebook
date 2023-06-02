@@ -10,7 +10,7 @@ import { Modal } from 'components/Modal/Modal';
 import useModal from '../../services/hooks/useModal';
 import { ContactDelete } from 'components/ContactDelete/ContactDelete';
 import { AnimatePresence } from 'framer-motion';
-import { show } from './ContactDetailsMotionStyle';
+import { show } from './ContactDetailsMotion';
 import { useState } from 'react';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 

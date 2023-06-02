@@ -7,11 +7,10 @@ import { motion } from 'framer-motion';
 export const Details = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  width: 100%;
-  background-color: ${theme.colors.bg};
+  /* background: ${theme.colors.bgContactDetails}; */
+  /* backdrop-filter: blur(5px); */
   padding-left: 65px;
   @media screen and (min-width: ${theme.width.desktop}) {
-    position: absolute;
     left: 0;
     bottom: 0;
     padding-left: 15px;
@@ -20,7 +19,7 @@ export const Details = styled(motion.div)`
 
 export const Phone = styled(motion.span)`
   font-size: 20px;
-  color: ${theme.colors.font};
+  color: ${theme.colors.white};
   font-weight: bold;
   margin-top: 15px;
   margin-bottom: 15px;

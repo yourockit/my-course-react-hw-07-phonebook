@@ -43,19 +43,17 @@ export const ContactForm = ({ id, name, phone, toggleModal, contactId }) => {
     };
     //======================================
 
-    if (!contacts) {
-      await createContact(contact).unwrap().then(toggleModal());
-      return;
-    }
-    const isInContacts = contacts.some(
-      contact => contact.name === e.name && contact.phone === e.phone
-    );
-
-    if (isInContacts) {
-      toast.warning(
-        `Contact: ${contact.name} with number: ${contact.phone} is alredy exist`
+    if (contacts) {
+      const isInContacts = contacts.some(
+        contact => contact.name === e.name && contact.phone === e.phone
       );
-      return;
+
+      if (isInContacts) {
+        toast.warning(
+          `Contact: ${contact.name} with number: ${contact.phone} is alredy exist`
+        );
+        return;
+      }
     }
     try {
       if (name && phone) {
