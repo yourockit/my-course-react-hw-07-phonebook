@@ -10,7 +10,7 @@ export const ContactListWrap = styled(motion.ul)`
 `;
 
 export const ContactsGroup = styled(motion.li)`
-  margin: 0 10px 0 10px;
+  margin: 0 15px 0 10px;
   @media screen and (min-width: ${theme.width.desktop}) {
     margin: 0;
   }
@@ -39,7 +39,7 @@ export const GroupSymbol = styled(motion.div)`
   width: 32px;
   background-color: ${theme.colors.grey};
   margin-bottom: 5px;
-  margin-right: 10px;
+  margin-right: 5px;
 `;
 
 export const Item = styled.li`

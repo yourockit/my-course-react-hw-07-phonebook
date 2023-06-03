@@ -7,7 +7,7 @@ export const ContactsListWrap = styled.ul`
 `;
 
 export const GroupContainer = styled.li`
-  margin: 0 10px 0 10px;
+  margin: 0 15px 0 10px;
   @media screen and (min-width: ${theme.width.desktop}) {
     margin: 0;
   }
@@ -19,7 +19,7 @@ export const GroupSymbol = styled.p`
   justify-content: end;
   height: 60px;
   font-size: 32px;
-  margin-right: 10px;
+  margin-right: 5px;
   color: ${theme.colors.grey};
 `;
 
