@@ -37,14 +37,14 @@ export const GroupSymbol = styled(motion.div)`
   width: 32px;
   background-color: ${theme.colors.grey};
   margin-bottom: 5px;
-  margin-right: 15px;
+  margin-right: 10px;
 `;
 
 export const Item = styled.li`
   display: flex;
   flex-direction: column;
   width: 100%;
-  border-bottom: 2px solid ${theme.colors.blueTransparent};
+  margin-bottom: 5px;
   &:last-child {
     border-bottom: 0;
   }
@@ -59,7 +59,8 @@ export const Item = styled.li`
 export const Contact = styled.div`
   display: flex;
   width: 100%;
-  background-color: ${theme.colors.blackTransparent};
+  border: 2px solid ${theme.colors.white};
+  border-radius: 4px;
   @media screen and (min-width: ${theme.width.desktop}) {
     height: 160px;
   }
@@ -71,5 +72,5 @@ export const ContactSymbol = styled(motion.p)`
   align-items: center;
   height: 50px;
   width: 50px;
-  background-color: ${theme.colors.grey};
+  background-color: ${theme.colors.blue};
 `;

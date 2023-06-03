@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import bgImg from '../img/blue.jpg';
+import { theme } from 'components/thems/theme';
 
 export const Container = styled.main`
   /* position: relative; */
@@ -12,7 +12,7 @@ export const Background = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url(${bgImg});
+  background: ${theme.colors.gradient};
   background-size: cover;
   background-position: center;
   z-index: -1;

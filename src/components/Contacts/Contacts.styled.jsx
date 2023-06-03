@@ -21,7 +21,7 @@ export const ContainerFixed = styled.div`
 
 export const HeaderWrap = styled.div`
   max-width: 1200px;
-  backdrop-filter: blur(30px);
+  backdrop-filter: blur(8px);
 `;
 
 export const TitleWrap = styled.div`

@@ -7,6 +7,7 @@ export const ContactsListWrap = styled.ul`
 `;
 
 export const GroupContainer = styled.li`
+  margin: 0 10px 0 10px;
   @media screen and (min-width: ${theme.width.desktop}) {
     margin: 0;
   }
@@ -18,7 +19,7 @@ export const GroupSymbol = styled.p`
   justify-content: end;
   height: 60px;
   font-size: 32px;
-  margin-right: 20px;
+  margin-right: 10px;
   color: ${theme.colors.grey};
 `;
 
@@ -37,9 +38,9 @@ export const Item = styled.li`
   display: flex;
   flex-direction: column;
   width: 100%;
-  border-bottom: 2px solid ${theme.colors.blueTransparent};
+  margin-bottom: 5px;
   &:last-child {
-    border-bottom: 0;
+    margin-bottom: 0;
   }
   @media screen and (min-width: ${theme.width.desktop}) {
     height: 160px;
@@ -54,17 +55,18 @@ export const Contact = styled.div`
   width: 100%;
   -webkit-tap-highlight-color: transparent;
   transition: background-color 200ms;
-  background-color: ${theme.colors.blackTransparent};
+  border: 2px solid ${theme.colors.white};
+  border-radius: 4px;
   &:hover {
     cursor: pointer;
   }
   &:active {
-    background-color: ${theme.colors.blackTransparentHover};
+    background-color: ${theme.colors.whiteHover};
   }
   @media screen and (min-width: ${theme.width.desktop}) {
     height: 160px;
     &:hover {
-      background-color: ${theme.colors.blackTransparentHover};
+      background-color: ${theme.colors.whiteHover};
     }
   }
 `;
@@ -75,7 +77,8 @@ export const ContactSymbol = styled.p`
   align-items: center;
   height: 50px;
   width: 50px;
-  background-color: ${theme.colors.grey};
+  border-radius: 2px;
+  background-color: ${theme.colors.blue};
   font-size: 32px;
   font-weight: bold;
   color: ${theme.colors.white};
@@ -85,11 +88,10 @@ export const Name = styled.span`
   display: flex;
   align-items: center;
   overflow: hidden;
-  height: 50px;
   width: calc(100% - 50px);
   font-size: 18px;
   font-weight: 400;
-  color: ${theme.colors.white};
+  color: ${theme.colors.black};
   padding-left: 15px;
   @media screen and (min-width: ${theme.width.desktop}) {
     width: 190px;

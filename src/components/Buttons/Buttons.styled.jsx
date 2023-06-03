@@ -9,16 +9,16 @@ export const Btn = styled.button`
   height: 40px;
   color: ${theme.colors.white};
   border: none;
-  background-color: transparent;
+  border-radius: 2px;
+  background-color: ${theme.colors.blue};
   -webkit-tap-highlight-color: transparent;
   transition: background-color 50ms, box-shadow 50ms;
   &:hover,
   &:active {
     cursor: pointer;
-    background-color: ${theme.colors.blackTransparentHover};
+    background-color: ${theme.colors.blueHover};
   }
   @media screen and (min-width: ${theme.width.desktop}) {
-    background-color: ${theme.colors.blackTransparent};
     width: 80px;
   }
 `;

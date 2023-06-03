@@ -22,15 +22,13 @@
 export const theme = {
   colors: {
     white: '#ffffff',
-    blue: '#0e91fd',
+    blue: '#4f9beb',
     black: '#222222',
-    whiteTransparent: '#ffffff30',
-    blueTransparent: '#0e91fd6d',
-    blackTransparent: '#2222225a',
-    blackTransparentHover: '#67676768',
+    whiteHover: '#ffffff74',
+    blueHover: '#5ea4ee',
     grey: '#464646',
-    bgMain:
-      'linear-gradient(55deg, rgba(54,90,114,1) 0%, rgba(60,96,120,1) 82%, rgba(28,50,87,1) 100%)',
+    gradient:
+      'linear-gradient(36deg, rgba(79,155,235,1) 0%, rgba(133,214,247,1) 100%)',
   },
   width: {
     desktop: '768px',
