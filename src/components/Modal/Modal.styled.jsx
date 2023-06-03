@@ -21,6 +21,7 @@ export const ModalViewer = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   overflow-y: initial;
+  border-radius: 4px;
   background-color: ${theme.colors.white};
   width: calc(100vw - 10%);
   padding-top: 15px;
