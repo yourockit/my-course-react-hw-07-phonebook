@@ -21,6 +21,9 @@ export const GroupSymbol = styled.p`
   font-size: 32px;
   margin-right: 5px;
   color: ${theme.colors.grey};
+  @media screen and (min-width: ${theme.width.desktop}) {
+    margin-right: 15px;
+  }
 `;
 
 export const ContactsContainer = styled.ul`
