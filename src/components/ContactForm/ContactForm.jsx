@@ -26,7 +26,13 @@ const schema = yup.object().shape({
     .required('Telephone number is required'),
 });
 
-export const ContactForm = ({ id, name, phone, toggleModal, contactId }) => {
+export const ContactForm = ({
+  id,
+  name = '',
+  phone = '',
+  toggleModal,
+  contactId,
+}) => {
   const [createContact] = useCreateContactMutation();
   const [updateContact] = useUpdateContactMutation();
   const { data: contacts } = useFetchContactsQuery();

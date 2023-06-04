@@ -62,12 +62,7 @@ export const Contacts = () => {
         title="Add Contact"
         closeModal={toggleModal}
       >
-        <ContactForm
-          toggleModal={toggleModal}
-          name={''}
-          phone={''}
-          contactId={onContaсtAction}
-        />
+        <ContactForm toggleModal={toggleModal} contactId={onContaсtAction} />
       </Modal>
       <ToastContainer
         position="top-center"
